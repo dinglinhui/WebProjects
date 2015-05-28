@@ -20,6 +20,18 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+		<!-- oschina版本仓库 -->
+		<repository>
+			<id>nexus</id>
+			<name>local private nexus</name>
+			<url>http://maven.oschina.net/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
 		<!-- 阿里巴巴发布版本仓库 -->
 		<repository>
 			<id>alibaba-opensource</id>

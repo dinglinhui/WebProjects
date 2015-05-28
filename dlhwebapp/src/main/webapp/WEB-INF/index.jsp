@@ -5,7 +5,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>jumping right now</title>
 <script language="javascript" type="text/javascript">
-	window.location.href = "./WEB-INF/jsp/login.jsp";
+	window.location.href = window.location.protocol+"//"+window.location.host+window.location.pathname+"jsp/login.jsp";
+	alert(window.location.protocol+"//"+window.location.host+window.location.pathname+"jsp/login.jsp");
 </script>
 </head>
 <body>

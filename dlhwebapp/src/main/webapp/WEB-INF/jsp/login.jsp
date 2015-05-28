@@ -27,9 +27,9 @@
 
 <body>
 	<div>
-		UserName:<input type="text" name="username" /> <br/>
-		PassWord:<input type="password" name="password" /><br/> 
-		<input type="submit" id="loginBtn" value="Login" />
+		UserName:<input type="text" name="username" /> <br /> PassWord:<input
+			type="password" name="password" /><br /> <input type="submit"
+			id="loginBtn" value="Login" />
 	</div>
 </body>
 </html>
