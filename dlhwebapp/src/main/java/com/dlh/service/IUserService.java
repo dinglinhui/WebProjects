@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.dlh.service;
 
 import com.dlh.model.UserEntity;

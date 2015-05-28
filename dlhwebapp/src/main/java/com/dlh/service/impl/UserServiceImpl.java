@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.dlh.service.impl;
 
 import javax.annotation.Resource;

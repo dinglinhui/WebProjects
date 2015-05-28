@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/aop
+    	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+    	http://www.springframework.org/schema/tx
+    	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd"
+	default-autowire="byName">
+	<!-- 注意上面的default-autowire="byName"，如果没有这个声明那么HibernateDaoSupport中的sessionFactory不会被注入 -->
+	<!-- 约定优于配置，约定优于配置 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:messages" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<!-- Hibernate4 -->
+	<!-- 加载资源文件 其中包含变量信息，必须在Spring配置文件的最前面加载，即第一个加载 -->
+	<context:property-placeholder location="classpath:config.properties" />
+
+	<!-- 数据库映射 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName}"></property>
+		<property name="url" value="${jdbc.databaseurl}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+
+	<!-- 数据库配置 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.Owill.web.system.entity</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 自动扫描组件，这里要把web下面的 controller去除，他们是在spring-servlet.xml中配置的，如果不去除会影响事务管理的。 -->
+	<context:component-scan base-package="com.Owill.web.system">
+		<context:exclude-filter type="regex"
+			expression="com.Owill.web.system.controller.*" />
+	</context:component-scan>
+
+	<!-- 配置Hibernate事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 配置事务异常封装 -->
+	<!-- <bean id="persistenceExceptionTranslationPostProcessor" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" 
+		/> -->
+
+	<!-- 下面是配置声明式事务管理的，个人感觉比用注解管理事务要简单方便 -->
+	<tx:annotation-driven transaction-manager="transactionManager"
+		proxy-target-class="true" />
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 声明式容器事务管理 ,transaction-manager指定事务管理器为transactionManager -->
+	<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager"> 
+		<tx:attributes> <tx:method name="add*" propagation="REQUIRED" /> <tx:method 
+		name="get*" propagation="REQUIRED" /> <tx:method name="*" read-only="true" 
+		/> </tx:attributes> </tx:advice> -->
+
+	<!-- <aop:config expose-proxy="true"> 只对业务逻辑层实施事务 <aop:pointcut id="txPointcut" 
+		expression="execution(* com.Owill.web.system.service..*.*(..))" /> Advisor定义，切入点和通知分别为txPointcut、txAdvice 
+		<aop:advisor pointcut-ref="txPointcut" advice-ref="txAdvice"/> </aop:config> -->
+
+</beans>

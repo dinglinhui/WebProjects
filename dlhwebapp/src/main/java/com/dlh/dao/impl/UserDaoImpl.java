@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.dlh.dao.impl;
 
 import javax.annotation.Resource;
@@ -16,7 +13,6 @@ import com.dlh.model.UserEntity;
 /**
  * @author dinglinhui
  */
-
 @Repository("userDao")
 public class UserDaoImpl implements IUserDao {
 	// extends BaseDaoImpl<UserEntity, Integer>
