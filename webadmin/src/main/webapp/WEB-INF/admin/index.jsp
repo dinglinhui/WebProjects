@@ -1,5 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+	String cxtPath = request.getContextPath();
+	String serverPath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
+	String appBasePath = serverPath + cxtPath + "/";
+	pageContext.setAttribute("appBasePath", appBasePath);
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +17,11 @@
 
 <!-- basic styles -->
 
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+<link href="<%=appBasePath %>assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="<%=appBasePath %>assets/css/font-awesome.min.css" />
 
 <!--[if IE 7]>
-		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+		  <link rel="stylesheet" href="<%=appBasePath %>assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
 
 <!-- page specific plugin styles -->
@@ -27,25 +33,25 @@
 
 <!-- ace styles -->
 
-<link rel="stylesheet" href="assets/css/ace.min.css" />
-<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+<link rel="stylesheet" href="<%=appBasePath %>assets/css/ace.min.css" />
+<link rel="stylesheet" href="<%=appBasePath %>assets/css/ace-rtl.min.css" />
+<link rel="stylesheet" href="<%=appBasePath %>assets/css/ace-skins.min.css" />
 
 <!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		  <link rel="stylesheet" href="<%=appBasePath %>assets/css/ace-ie.min.css" />
 		<![endif]-->
 
 <!-- inline styles related to this page -->
 
 <!-- ace settings handler -->
 
-<script src="assets/js/ace-extra.min.js"></script>
+<script src="<%=appBasePath %>assets/js/ace-extra.min.js"></script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 <!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
+		<script src="<%=appBasePath %>assets/js/html5shiv.js"></script>
+		<script src="<%=appBasePath %>assets/js/respond.min.js"></script>
 		<![endif]-->
 </head>
 
@@ -191,7 +197,7 @@
 							<li class="dropdown-header"><i class="icon-envelope-alt"></i>
 								5 Messages</li>
 
-							<li><a href="#"> <img src="assets/avatars/avatar.png"
+							<li><a href="#"> <img src="<%=appBasePath %>assets/avatars/avatar.png"
 									class="msg-photo" alt="Alex's Avatar" /> <span
 									class="msg-body"> <span class="msg-title"> <span
 											class="blue">Alex:</span> Ciao sociis natoque penatibus et
@@ -202,7 +208,7 @@
 								</span>
 							</a></li>
 
-							<li><a href="#"> <img src="assets/avatars/avatar3.png"
+							<li><a href="#"> <img src="<%=appBasePath %>assets/avatars/avatar3.png"
 									class="msg-photo" alt="Susan's Avatar" /> <span
 									class="msg-body"> <span class="msg-title"> <span
 											class="blue">Susan:</span> Vestibulum id ligula porta felis
@@ -213,7 +219,7 @@
 								</span>
 							</a></li>
 
-							<li><a href="#"> <img src="assets/avatars/avatar4.png"
+							<li><a href="#"> <img src="<%=appBasePath %>assets/avatars/avatar4.png"
 									class="msg-photo" alt="Bob's Avatar" /> <span class="msg-body">
 										<span class="msg-title"> <span class="blue">Bob:</span>
 											Nullam quis risus eget urna mollis ornare ...
@@ -230,7 +236,7 @@
 
 					<li class="light-blue"><a data-toggle="dropdown" href="#"
 						class="dropdown-toggle"> <img class="nav-user-photo"
-							src="assets/avatars/user.jpg" alt="Jason's Photo" /> <span
+							src="<%=appBasePath %>assets/avatars/user.jpg" alt="Jason's Photo" /> <span
 							class="user-info"> <small>Welcome,</small> Jason
 						</span> <i class="icon-caret-down"></i>
 					</a>
@@ -993,7 +999,7 @@
 															<div class="itemdiv memberdiv">
 																<div class="user">
 																	<img alt="Bob Doe's avatar"
-																		src="assets/avatars/user.jpg" />
+																		src="<%=appBasePath %>assets/avatars/user.jpg" />
 																</div>
 
 																<div class="body">
@@ -1047,7 +1053,7 @@
 															<div class="itemdiv memberdiv">
 																<div class="user">
 																	<img alt="Joe Doe's avatar"
-																		src="assets/avatars/avatar2.png" />
+																		src="<%=appBasePath %>assets/avatars/avatar2.png" />
 																</div>
 
 																<div class="body">
@@ -1101,7 +1107,7 @@
 															<div class="itemdiv memberdiv">
 																<div class="user">
 																	<img alt="Jim Doe's avatar"
-																		src="assets/avatars/avatar.png" />
+																		src="<%=appBasePath %>assets/avatars/avatar.png" />
 																</div>
 
 																<div class="body">
@@ -1155,7 +1161,7 @@
 															<div class="itemdiv memberdiv">
 																<div class="user">
 																	<img alt="Alex Doe's avatar"
-																		src="assets/avatars/avatar5.png" />
+																		src="<%=appBasePath %>assets/avatars/avatar5.png" />
 																</div>
 
 																<div class="body">
@@ -1177,7 +1183,7 @@
 															<div class="itemdiv memberdiv">
 																<div class="user">
 																	<img alt="Bob Doe's avatar"
-																		src="assets/avatars/avatar2.png" />
+																		src="<%=appBasePath %>assets/avatars/avatar2.png" />
 																</div>
 
 																<div class="body">
@@ -1199,7 +1205,7 @@
 															<div class="itemdiv memberdiv">
 																<div class="user">
 																	<img alt="Susan's avatar"
-																		src="assets/avatars/avatar3.png" />
+																		src="<%=appBasePath %>assets/avatars/avatar3.png" />
 																</div>
 
 																<div class="body">
@@ -1220,7 +1226,7 @@
 															<div class="itemdiv memberdiv">
 																<div class="user">
 																	<img alt="Phil Doe's avatar"
-																		src="assets/avatars/avatar4.png" />
+																		src="<%=appBasePath %>assets/avatars/avatar4.png" />
 																</div>
 
 																<div class="body">
@@ -1243,7 +1249,7 @@
 															<div class="itemdiv memberdiv">
 																<div class="user">
 																	<img alt="Alexa Doe's avatar"
-																		src="assets/avatars/avatar1.png" />
+																		src="<%=appBasePath %>assets/avatars/avatar1.png" />
 																</div>
 
 																<div class="body">
@@ -1279,7 +1285,7 @@
 															<div class="itemdiv commentdiv">
 																<div class="user">
 																	<img alt="Bob Doe's Avatar"
-																		src="assets/avatars/avatar.png" />
+																		src="<%=appBasePath %>assets/avatars/avatar.png" />
 																</div>
 
 																<div class="body">
@@ -1336,7 +1342,7 @@
 															<div class="itemdiv commentdiv">
 																<div class="user">
 																	<img alt="Jennifer's Avatar"
-																		src="assets/avatars/avatar1.png" />
+																		src="<%=appBasePath %>assets/avatars/avatar1.png" />
 																</div>
 
 																<div class="body">
@@ -1368,7 +1374,7 @@
 															<div class="itemdiv commentdiv">
 																<div class="user">
 																	<img alt="Joe's Avatar"
-																		src="assets/avatars/avatar2.png" />
+																		src="<%=appBasePath %>assets/avatars/avatar2.png" />
 																</div>
 
 																<div class="body">
@@ -1400,7 +1406,7 @@
 															<div class="itemdiv commentdiv">
 																<div class="user">
 																	<img alt="Rita's Avatar"
-																		src="assets/avatars/avatar3.png" />
+																		src="<%=appBasePath %>assets/avatars/avatar3.png" />
 																</div>
 
 																<div class="body">
@@ -1465,7 +1471,7 @@
 													<div class="itemdiv dialogdiv">
 														<div class="user">
 															<img alt="Alexa's Avatar"
-																src="assets/avatars/avatar1.png" />
+																src="<%=appBasePath %>assets/avatars/avatar1.png" />
 														</div>
 
 														<div class="body">
@@ -1491,7 +1497,7 @@
 
 													<div class="itemdiv dialogdiv">
 														<div class="user">
-															<img alt="John's Avatar" src="assets/avatars/avatar.png" />
+															<img alt="John's Avatar" src="<%=appBasePath %>assets/avatars/avatar.png" />
 														</div>
 
 														<div class="body">
@@ -1516,7 +1522,7 @@
 
 													<div class="itemdiv dialogdiv">
 														<div class="user">
-															<img alt="Bob's Avatar" src="assets/avatars/user.jpg" />
+															<img alt="Bob's Avatar" src="<%=appBasePath %>assets/avatars/user.jpg" />
 														</div>
 
 														<div class="body">
@@ -1543,7 +1549,7 @@
 
 													<div class="itemdiv dialogdiv">
 														<div class="user">
-															<img alt="Jim's Avatar" src="assets/avatars/avatar4.png" />
+															<img alt="Jim's Avatar" src="<%=appBasePath %>assets/avatars/avatar4.png" />
 														</div>
 
 														<div class="body">
@@ -1569,7 +1575,7 @@
 													<div class="itemdiv dialogdiv">
 														<div class="user">
 															<img alt="Alexa's Avatar"
-																src="assets/avatars/avatar1.png" />
+																src="<%=appBasePath %>assets/avatars/avatar1.png" />
 														</div>
 
 														<div class="body">
@@ -1694,7 +1700,7 @@
 
 	<!--[if !IE]> -->
 
-	<script src="./assets/js/jquery-2.0.3.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/jquery-2.0.3.min.js"></script>
 
 	<!-- <![endif]-->
 
@@ -1707,7 +1713,7 @@
 	<script type="text/javascript">
 		window.jQuery
 				|| document
-						.write("<script src='assets/js/jquery-2.0.3.min.js'>"
+						.write("<script src='<%=appBasePath %>assets/js/jquery-2.0.3.min.js'>"
 								+ "<"+"/script>");
 	</script>
 
@@ -1715,38 +1721,38 @@
 
 	<!--[if IE]>
 <script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+ window.jQuery || document.write("<script src='<%=appBasePath %>assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
 </script>
 <![endif]-->
 
 	<script type="text/javascript">
 		if ("ontouchend" in document)
 			document
-					.write("<script src='assets/js/jquery.mobile.custom.min.js'>"
+					.write("<script src='<%=appBasePath %>assets/js/jquery.mobile.custom.min.js'>"
 							+ "<"+"/script>");
 	</script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/typeahead-bs2.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/bootstrap.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/typeahead-bs2.min.js"></script>
 
 	<!-- page specific plugin scripts -->
 
 	<!--[if lte IE 8]>
-		  <script src="assets/js/excanvas.min.js"></script>
+		  <script src="<%=appBasePath %>assets/js/excanvas.min.js"></script>
 		<![endif]-->
 
-	<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
-	<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
-	<script src="assets/js/jquery.easy-pie-chart.min.js"></script>
-	<script src="assets/js/jquery.sparkline.min.js"></script>
-	<script src="assets/js/flot/jquery.flot.min.js"></script>
-	<script src="assets/js/flot/jquery.flot.pie.min.js"></script>
-	<script src="assets/js/flot/jquery.flot.resize.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/jquery.slimscroll.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/jquery.easy-pie-chart.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/jquery.sparkline.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/flot/jquery.flot.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/flot/jquery.flot.pie.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/flot/jquery.flot.resize.min.js"></script>
 
 	<!-- ace scripts -->
 
-	<script src="assets/js/ace-elements.min.js"></script>
-	<script src="assets/js/ace.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/ace-elements.min.js"></script>
+	<script src="<%=appBasePath %>assets/js/ace.min.js"></script>
 
 	<!-- inline scripts related to this page -->
 
