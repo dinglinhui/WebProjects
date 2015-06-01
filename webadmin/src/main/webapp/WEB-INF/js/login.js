@@ -21,11 +21,11 @@ $(function() {
 				if (false == data.loginResult) {
 					alert("用户名或者密码错误，请重新登录！");
 				} else if (true == data.loginResult) {
-//					alert("登录成功！");
-//					var indexUrl = window.location.protocol+"//"+window.location.host+window.location.pathname+"html/index.html";
 					var indexUrl = window.location.protocol+"//"+window.location.host+"/webadmin/app/home";
-					alert(indexUrl);
-					window.location = indexUrl;
+					self.location = indexUrl;
+//					alert(indexUrl);
+//					window.location = indexUrl;
+//					window.navigate(indexUrl); 
 				}
 			},
 			error : function() {

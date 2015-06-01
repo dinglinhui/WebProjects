@@ -25,7 +25,6 @@ public class SystemInterceptor extends HandlerInterceptorAdapter {
 	private static List<String> global = new ArrayList<String>();
 
 	static {
-
 		global.add("sysmage/login");
 		global.add("sysmage/register");
 		global.add("sysmage/check");
