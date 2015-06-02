@@ -26,7 +26,7 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public Map<String, Object> login(UserEntity user) {
 		Map<String, Object> map = new HashMap<String, Object>();
-//		System.out.println(user.toString());
+		System.out.println(user.toString());
 		boolean loginResult = userService.isExist(user);
 		map.put("loginResult", loginResult);
 		return map;

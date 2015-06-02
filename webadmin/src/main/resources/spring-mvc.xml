@@ -63,7 +63,7 @@
 	<mvc:resources mapping="/image/**" location="/WEB-INF/image/" />
 	<mvc:resources mapping="/html/**" location="/WEB-INF/html/" />
 	<mvc:resources mapping="/assets/**" location="/WEB-INF/assets/" />
-	<mvc:resources mapping="/admin/**" location="/WEB-INF/admin/" />
+	<mvc:resources mapping="/views/**" location="/WEB-INF/views/" />
 	<!-- 当上面要访问的静态资源不包括在上面的配置中时，则根据此配置来访问 -->
 	<mvc:default-servlet-handler />
 
@@ -103,7 +103,7 @@
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 		<property name="contentType" value="text/html" />
-		<property name="prefix" value="/WEB-INF/admin/" />
+		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 

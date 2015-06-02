@@ -6,48 +6,23 @@
 	pageContext.setAttribute("appBasePath", appBasePath);
 %>
 
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 	<head>
-		<meta charset="utf-8" />
+		<base href="<%=appBasePath%>">
 		<title>Login Page - Ace Admin</title>
-
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<!-- basic styles -->
-
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<link href="<%=appBasePath %>assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="<%=appBasePath %>assets/css/font-awesome.min.css" />
-
-		<!--[if IE 7]>
-		  <link rel="stylesheet" href="<%=appBasePath %>assets/css/font-awesome-ie7.min.css" />
-		<![endif]-->
-
-		<!-- page specific plugin styles -->
-
-		<!-- fonts -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
-
-		<!-- ace styles -->
 		<link rel="stylesheet" href="<%=appBasePath %>assets/css/ace.min.css" />
 		<link rel="stylesheet" href="<%=appBasePath %>assets/css/ace-rtl.min.css" />
-
-		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="<%=appBasePath %>assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-		<!-- inline styles related to this page -->
-
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-		<!--[if lt IE 9]>
-		<script src="<%=appBasePath %>assets/js/html5shiv.js"></script>
-		<script src="<%=appBasePath %>assets/js/respond.min.js"></script>
-		<![endif]-->
-		<script type="text/javascript" src="<%=appBasePath%>js/jquery-1.8.2.min.js"></script>
-		<script type="text/javascript" src="<%=appBasePath%>js/md5.js"></script>
-		<script type="text/javascript" src="<%=appBasePath%>js/login.js"></script>
 	</head>
 
 	<body class="login-layout">
@@ -78,7 +53,7 @@
 
 											<div class="space-6"></div>
 
-											<form>
+											<!-- <form> -->
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
@@ -107,7 +82,7 @@
 
 													<div class="space-4"></div>
 												</fieldset>
-											</form>
+											<!-- </form> -->
 
 											<div class="social-or-login center">
 												<span class="bigger-110">Or Login Using</span>
@@ -159,7 +134,7 @@
 												Enter your email and to receive instructions
 											</p>
 
-											<form>
+											<!-- <form> -->
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
@@ -175,7 +150,7 @@
 														</button>
 													</div>
 												</fieldset>
-											</form>
+											<!-- </form> -->
 										</div><!-- /widget-main -->
 
 										<div class="toolbar center">
@@ -198,7 +173,7 @@
 											<div class="space-6"></div>
 											<p> Enter your details to begin: </p>
 
-											<form>
+											<!-- <form> -->
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
@@ -250,7 +225,7 @@
 														</button>
 													</div>
 												</fieldset>
-											</form>
+											<!-- </form> -->
 										</div>
 
 										<div class="toolbar center">
@@ -268,10 +243,13 @@
 			</div>
 		</div><!-- /.main-container -->
 
-		<%-- <script src="<%=appBasePath %>assets/js/jquery-2.0.3.min.js"></script> --%>
 		<script type="text/javascript">
 			window.jQuery || document.write("<script src='<%=appBasePath %>assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
 		</script>
+		<%-- <script type="text/javascript" src="<%=appBasePath%>js/jquery-1.8.2.min.js"></script> --%>
+		<script type="text/javascript" src="<%=appBasePath %>assets/js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="<%=appBasePath%>js/md5.js"></script>
+		<script type="text/javascript" src="<%=appBasePath%>js/login.js"></script>
 		<script type="text/javascript">
 			if("ontouchend" in document) document.write("<script src='<%=appBasePath %>assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>

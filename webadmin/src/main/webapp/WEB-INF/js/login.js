@@ -23,7 +23,6 @@ $(function() {
 				} else if (true == data.loginResult) {
 					var indexUrl = window.location.protocol+"//"+window.location.host+"/webadmin/app/home";
 					self.location = indexUrl;
-//					alert(indexUrl);
 //					window.location = indexUrl;
 //					window.navigate(indexUrl); 
 				}
