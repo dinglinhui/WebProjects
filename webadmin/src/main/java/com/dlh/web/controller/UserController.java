@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.dlh.service.IUserService;
 import com.dlh.web.model.UserEntity;
@@ -30,5 +31,13 @@ public class UserController {
 		boolean loginResult = userService.isExist(user);
 		map.put("loginResult", loginResult);
 		return map;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	public ModelAndView logout() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("login");
+		return modelAndView;
 	}
 }

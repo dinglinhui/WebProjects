@@ -77,7 +77,6 @@
 															<span class="lbl"> Remember Me</span>
 														</label>
 														<input type="submit" id="loginBtn" value="Login" class="width-35 pull-right btn btn-sm btn-primary"/>
-														
 													</div>
 
 													<div class="space-4"></div>
@@ -249,7 +248,7 @@
 		<%-- <script type="text/javascript" src="<%=appBasePath%>js/jquery-1.8.2.min.js"></script> --%>
 		<script type="text/javascript" src="<%=appBasePath %>assets/js/jquery-2.0.3.min.js"></script>
 		<script type="text/javascript" src="<%=appBasePath%>js/md5.js"></script>
-		<script type="text/javascript" src="<%=appBasePath%>js/login.js"></script>
+		<script type="text/javascript" src="<%=appBasePath%>js/authorize.js"></script>
 		<script type="text/javascript">
 			if("ontouchend" in document) document.write("<script src='<%=appBasePath %>assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>

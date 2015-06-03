@@ -33,4 +33,24 @@ $(function() {
 		});
 	});
 
+	$("#logoutBtn").click(function() {
+		console.log("logout");
+		$.ajax({
+			type : "post",
+			dataType : "json",
+//			data : user,
+			contentType : "application/x-www-form-urlencoded;charset=UTF-8",
+			url : window.location.protocol+"//"+window.location.host+"/webadmin/user/logout",
+			// 同步async: false,（默认是true）;
+			// 如上：false为同步，这个方法中的Ajax请求将整个浏览器锁死，
+			// 只有test.jsp执行结束后，才可以执行其它操作。
+			async : false,
+			success : function() {
+				
+			},
+			error : function() {
+				alert("服务器发生故障，请尝试重新登录！");
+			}
+		});
+	});
 });

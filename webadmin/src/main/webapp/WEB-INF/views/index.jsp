@@ -212,8 +212,7 @@
 						</span> <i class="icon-caret-down"></i>
 					</a>
 
-						<ul
-							class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+						<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 							<li><a href="#"> <i class="icon-cog"></i> Settings
 							</a></li>
 
@@ -223,6 +222,7 @@
 							<li class="divider"></li>
 
 							<li><a href="#"> <i class="icon-off"></i> Logout
+							<!-- <input type="submit" id="logoutBtn" value="Logout"/> -->
 							</a></li>
 						</ul></li>
 				</ul>
@@ -1669,38 +1669,15 @@
 
 	<!-- basic scripts -->
 
-	<!--[if !IE]> -->
-
-	<script src="<%=appBasePath %>assets/js/jquery-2.0.3.min.js"></script>
-
-	<!-- <![endif]-->
-
-	<!--[if IE]>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<![endif]-->
-
-	<!--[if !IE]> -->
-
+	<script type="text/javascript" src="<%=appBasePath %>assets/js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="<%=appBasePath%>js/md5.js"></script>
+	<script type="text/javascript" src="<%=appBasePath%>js/authorize.js"></script>
 	<script type="text/javascript">
-		window.jQuery
-				|| document
-						.write("<script src='<%=appBasePath %>assets/js/jquery-2.0.3.min.js'>"
-								+ "<"+"/script>");
+		window.jQuery || document.write("<script src='<%=appBasePath %>assets/js/jquery-2.0.3.min.js'>" + "<"+"/script>");
 	</script>
-
-	<!-- <![endif]-->
-
-	<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='<%=appBasePath %>assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
-</script>
-<![endif]-->
-
 	<script type="text/javascript">
 		if ("ontouchend" in document)
-			document
-					.write("<script src='<%=appBasePath %>assets/js/jquery.mobile.custom.min.js'>"
-							+ "<"+"/script>");
+			document.write("<script src='<%=appBasePath %>assets/js/jquery.mobile.custom.min.js'>" + "<"+"/script>");
 	</script>
 	<script src="<%=appBasePath %>assets/js/bootstrap.min.js"></script>
 	<script src="<%=appBasePath %>assets/js/typeahead-bs2.min.js"></script>
