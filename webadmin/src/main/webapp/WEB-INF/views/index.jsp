@@ -221,8 +221,7 @@
 
 							<li class="divider"></li>
 
-							<li><a href="#"> <i class="icon-off"></i> Logout
-							<!-- <input type="submit" id="logoutBtn" value="Logout"/> -->
+							<li><a href="/webadmin/user/logout"> <i class="icon-off"></i> Logout
 							</a></li>
 						</ul></li>
 				</ul>
@@ -492,7 +491,8 @@
 
 					<div class="nav-search" id="nav-search">
 						<form class="form-search">
-							<span class="input-icon"> <input type="text"
+							<span class="input-icon"> 
+							<input type="text"
 								placeholder="Search ..." class="nav-search-input"
 								id="nav-search-input" autocomplete="off" /> <i
 								class="icon-search nav-search-icon"></i>

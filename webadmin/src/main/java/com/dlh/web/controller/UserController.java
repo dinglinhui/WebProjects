@@ -34,7 +34,7 @@ public class UserController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public ModelAndView logout() {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("login");

@@ -172,7 +172,7 @@
 											<div class="space-6"></div>
 											<p> Enter your details to begin: </p>
 
-											<!-- <form> -->
+											<form>
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
@@ -224,7 +224,7 @@
 														</button>
 													</div>
 												</fieldset>
-											<!-- </form> -->
+											</form>
 										</div>
 
 										<div class="toolbar center">
