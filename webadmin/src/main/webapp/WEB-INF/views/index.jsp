@@ -207,8 +207,8 @@
 
 					<li class="light-blue"><a data-toggle="dropdown" href="#"
 						class="dropdown-toggle"> <img class="nav-user-photo"
-							src="<%=appBasePath %>assets/avatars/user.jpg" alt="Jason's Photo" /> <span
-							class="user-info"> <small>Welcome,</small> Jason
+							src="<%=appBasePath %>assets/avatars/user.jpg" alt="Kevin's Photo" /> <span
+							class="user-info"> <small>Welcome,</small> Kevin
 						</span> <i class="icon-caret-down"></i>
 					</a>
 

@@ -213,7 +213,7 @@
 		<!-- Menu -->
 		<ul class="menu">
 			<li>&copy; dinglinhui.com</li>
-			<li>Author: dinglinhui@hotmail.com</li>
+			<li>Author: Kevin Ding</li>
 		</ul>
 
 	</footer>

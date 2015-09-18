@@ -29,7 +29,7 @@ public class AppController {
 		modelAndView.setViewName("login");
 		return modelAndView;
 	}
-	
+
 	@ResponseBody
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public ModelAndView home() {
