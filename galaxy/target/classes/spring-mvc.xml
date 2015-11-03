@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+				      	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd  
+				      	http://www.springframework.org/schema/util
+  						http://www.springframework.org/schema/util/spring-util-4.1.xsd
+				      	http://www.springframework.org/schema/context  
+				      	http://www.springframework.org/schema/context/spring-context-4.1.xsd  
+				      	http://www.springframework.org/schema/mvc  
+				      	http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
+
+	<!-- 默认的注解映射的支持 -->
+	<!-- <mvc:annotation-driven /> -->
+	<mvc:annotation-driven validator="validator"
+		conversion-service="conversion-service" />
+
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="providerClass" value="org.hibernate.validator.HibernateValidator" />
+		<!-- 不设置则默认为classpath下的 ValidationMessages.properties -->
+		<property name="validationMessageSource" ref="validatemessageSource" />
+	</bean>
+
+	<bean id="conversion-service"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean" />
+
+	<bean id="validatemessageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:validatemessages" />
+		<property name="fileEncodings" value="utf-8" />
+		<property name="cacheSeconds" value="120" />
+	</bean>
+
+	<!-- 国际化 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<!-- 国际化信息所在的文件名 -->
+		<property name="basename" value="messages" />
+		<!-- 如果在国际化资源文件中找不到对应代码的信息，就用这个代码作为名称 -->
+		<property name="useCodeAsDefaultMessage" value="true" />
+	</bean>
+
+	<mvc:interceptors>
+		<!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置 -->
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+		<!-- 如果不定义 mvc:mapping path 将拦截所有的URL请求 -->
+		<bean class="com.dlh.galaxy.web.admin.interceptor.AuthInterceptor"></bean>
+	</mvc:interceptors>
+
+	<!-- <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" 
+		/> -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
+
+
+	<!-- 如果当前请求为“/”时，则转发到“/helloworld/index" -->
+	<mvc:view-controller path="/" view-name="forward:/index" />
+	<!-- 静态资源映射 -->
+	<mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
+	<mvc:resources mapping="/css/**" location="/WEB-INF/css/" />
+	<mvc:resources mapping="/image/**" location="/WEB-INF/image/" />
+	<mvc:resources mapping="/html/**" location="/WEB-INF/html/" />
+	<mvc:resources mapping="/assets/**" location="/WEB-INF/assets/" />
+	<mvc:resources mapping="/views/**" location="/WEB-INF/views/" />
+	<!-- 当上面要访问的静态资源不包括在上面的配置中时，则根据此配置来访问 -->
+	<mvc:default-servlet-handler />
+
+	<!-- 1：对web包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
+	<!-- 开启controller注解支持 -->
+	<!-- use-default-filters="false" 只扫描指定的注解 -->
+	<!-- <context:component-scan base-package="com.dlh.galaxy.apps.web.controller" /> -->
+	<context:component-scan base-package="com.dlh.galaxy.web.admin.controller" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<!-- 2：启动Spring MVC的注解功能，完成请求和注解POJO的映射，添加拦截器，类级别的处理器映射 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<bean class="com.dlh.galaxy.web.admin.interceptor.SystemInterceptor" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 3：启动Spring MVC的注解功能，完成请求和注解POJO的映射， 配置一个基于注解的定制的WebBindingInitializer，解决日期转换问题，方法级别的处理器映射 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="cacheSeconds" value="0" />
+		<property name="webBindingInitializer">
+			<bean class="com.dlh.galaxy.web.admin.tools.SystemWebBinding" />
+		</property>
+		<!-- 配置一下对json数据的转换 -->
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 定义视图解析器：对模型视图名称的解析，即在模型视图名称添加前后缀 InternalResourceViewResolver默认的就是JstlView所以这里就不用配置viewClass了 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="contentType" value="text/html" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 支持上传文件 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设置上传文件的最大尺寸为1MB -->
+		<property name="maxUploadSize">
+			<value>1048576</value>
+		</property>
+		<property name="defaultEncoding">
+			<value>UTF-8</value>
+		</property>
+	</bean>
+</beans>  
