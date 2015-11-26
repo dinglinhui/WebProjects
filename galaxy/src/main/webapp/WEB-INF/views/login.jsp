@@ -57,7 +57,7 @@
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" name="username" />
+															<input type="text" class="form-control" placeholder="Username or E-mail or Phone" name="username" />
 															<i class="icon-user"></i>
 														</span>
 													</label>
@@ -172,32 +172,33 @@
 											<div class="space-6"></div>
 											<p> Enter your details to begin: </p>
 
-											<form>
+											<!-- <form name="register" action="user/register" onsubmit="" enctype="application/x-www-form-urlencoded" method="post"> -->
+											<!-- <form> -->
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
+															<input type="text" class="form-control" placeholder="Email"  name="reg_email" />
 															<i class="icon-envelope"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" />
+															<input type="text" class="form-control" placeholder="Username" name="reg_username" />
 															<i class="icon-user"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" />
+															<input type="password" class="form-control" placeholder="Password" name="reg_password" />
 															<i class="icon-lock"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Repeat password" />
+															<input type="password" class="form-control" placeholder="Repeat password"  name="reg_repassword" />
 															<i class="icon-retweet"></i>
 														</span>
 													</label>
@@ -218,13 +219,13 @@
 															Reset
 														</button>
 
-														<button type="button" class="width-65 pull-right btn btn-sm btn-success">
+														<button id="registerBtn" type="submit" class="width-65 pull-right btn btn-sm btn-success">
 															Register
 															<i class="icon-arrow-right icon-on-right"></i>
 														</button>
 													</div>
 												</fieldset>
-											</form>
+											<!-- </form> -->
 										</div>
 
 										<div class="toolbar center">

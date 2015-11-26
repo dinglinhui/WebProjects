@@ -14,9 +14,13 @@ import javax.persistence.Table;
 @Entity
 public class UserEntity {
 	private int id;
+	private String email;
 	private String username;
 	private String password;
-	private boolean sex; // 默认为0；0表示男，1表示女
+	private boolean sex; // 默认为0；0表示女，1表示男
+	private String cellphone;
+	private String telephone;
+	private String address;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +31,15 @@ public class UserEntity {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	@Column(name = "UEMAIL", nullable = false, length = 45)
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	@Column(name = "UNAME", nullable = false, length = 20)
@@ -47,7 +60,7 @@ public class UserEntity {
 		this.password = password;
 	}
 
-	@Column(name = "USEX", nullable = false, length = 1)
+	@Column(name = "USEX", nullable = true, length = 1)
 	public boolean isSex() {
 		return sex;
 	}
@@ -56,11 +69,37 @@ public class UserEntity {
 		this.sex = sex;
 	}
 
-	@Override
-	public String toString() {
-		return "User [ \nid : " + this.id + "\nusername : " + this.username
-				+ "\npassword : " + this.password + "\nsex : " + this.sex
-				+ " ]";
+	@Column(name = "UCELLPHONE", nullable = true, length = 45)
+	public String getCellphone() {
+		return cellphone;
 	}
 
+	public void setCellphone(String cellphone) {
+		this.cellphone = cellphone;
+	}
+
+	@Column(name = "UTELEPHONE", nullable = true, length = 45)
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	@Column(name = "UADDRESS", nullable = true, length = 200)
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "User [ \nid : " + this.id + "\nemail : " + this.email + "\nusername : " + this.username
+				+ "\npassword : " + this.password + "\nsex : " + this.sex + "\ncellphone : " + this.cellphone
+				+ "\ntelephone : " + this.telephone + "\naddress : " + this.address + " ]";
+	}
 }

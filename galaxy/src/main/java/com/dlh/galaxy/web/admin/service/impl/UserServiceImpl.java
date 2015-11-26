@@ -22,5 +22,18 @@ public class UserServiceImpl implements IUserService {
 	public boolean isExist(UserEntity user) {
 		return userDao.isExist(user);
 	}
+	
+	@Override
+	public boolean login(UserEntity user) {
+		return userDao.isUser(user);
+	}
+
+	@Override
+	public boolean register(UserEntity user) {
+		if (userDao.isExist(user))
+			return false;
+		else
+			return userDao.insert(user);
+	}
 
 }
