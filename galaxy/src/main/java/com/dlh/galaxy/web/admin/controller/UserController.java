@@ -22,12 +22,12 @@ import com.dlh.galaxy.web.admin.service.IUserService;
 public class UserController {
 	@Resource
 	private IUserService userService;
-	
+
 	@ResponseBody
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public Map<String, Object> register(UserEntity user) {
 		Map<String, Object> map = new HashMap<String, Object>();
-//		System.out.println(user.toString());
+		System.out.println(user.toString());
 		boolean registerResult = userService.register(user);
 		map.put("registerResult", registerResult);
 		return map;
@@ -37,12 +37,12 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public Map<String, Object> login(UserEntity user) {
 		Map<String, Object> map = new HashMap<String, Object>();
-//		System.out.println(user.toString());
+		System.out.println(user.toString());
 		boolean loginResult = userService.login(user);
 		map.put("loginResult", loginResult);
 		return map;
 	}
-	
+
 	@ResponseBody
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public ModelAndView logout() {

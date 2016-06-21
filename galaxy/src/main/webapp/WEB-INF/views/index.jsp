@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Dashboard - Ace Admin</title>
+<title>Galaxy Admin Management System</title>
 
 <meta name="description" content="overview &amp; stats" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,7 +38,7 @@
 		<div class="navbar-container" id="navbar-container">
 			<div class="navbar-header pull-left">
 				<a href="#" class="navbar-brand"> <small> <i
-						class="icon-leaf"></i> Ace Admin
+						class="icon-leaf"></i> Galaxy Admin Management System
 				</small>
 				</a>
 				<!-- /.brand -->
@@ -522,8 +522,8 @@
 								</button>
 
 								<i class="icon-ok green"></i> Welcome to <strong class="green">
-									Ace <small>(v1.2)</small>
-								</strong> , the lightweight, feature-rich and easy to use admin template.
+									Galaxy Admin Management System <small>(v1.0)</small>
+								</strong> , the lightweight, feature-rich and easy to use galaxy system.
 							</div>
 
 							<div class="row">

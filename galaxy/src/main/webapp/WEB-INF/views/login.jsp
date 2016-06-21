@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<base href="<%=appBasePath%>">
-		<title>Login Page - Ace Admin</title>
+		<title>Login Page - Galaxy Admin Management System</title>
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,10 +34,10 @@
 							<div class="center">
 								<h1>
 									<i class="icon-leaf green"></i>
-									<span class="red">Ace</span>
-									<span class="white">Application</span>
+									<span class="red">Galaxy</span>
+									<span class="white">AM System</span>
 								</h1>
-								<h4 class="blue">&copy; Company Name</h4>
+								<h4 class="blue">&copy; dinglinhui.com</h4>
 							</div>
 
 							<div class="space-6"></div>
@@ -48,7 +48,7 @@
 										<div class="widget-main">
 											<h4 class="header blue lighter bigger">
 												<i class="icon-coffee green"></i>
-												Please Enter Your Information
+												Login
 											</h4>
 
 											<div class="space-6"></div>
@@ -57,7 +57,7 @@
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username or E-mail or Phone" name="username" />
+															<input type="text" class="form-control" placeholder="Username/E-mail/Mobile Number" name="username" />
 															<i class="icon-user"></i>
 														</span>
 													</label>
@@ -106,13 +106,13 @@
 											<div>
 												<a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
 													<i class="icon-arrow-left"></i>
-													I forgot my password
+													Forgot password
 												</a>
 											</div>
 
 											<div>
 												<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">
-													I want to register
+													Register
 													<i class="icon-arrow-right"></i>
 												</a>
 											</div>
@@ -173,7 +173,7 @@
 											<p> Enter your details to begin: </p>
 
 											<!-- <form name="register" action="user/register" onsubmit="" enctype="application/x-www-form-urlencoded" method="post"> -->
-											<!-- <form> -->
+											<form>
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
@@ -215,6 +215,7 @@
 
 													<div class="clearfix">
 														<button type="reset" class="width-30 pull-left btn btn-sm">
+														<!-- <button id="resetBtn" type="submit" class="width-30 pull-left btn btn-sm"> -->
 															<i class="icon-refresh"></i>
 															Reset
 														</button>
@@ -225,7 +226,7 @@
 														</button>
 													</div>
 												</fieldset>
-											<!-- </form> -->
+											</form>
 										</div>
 
 										<div class="toolbar center">

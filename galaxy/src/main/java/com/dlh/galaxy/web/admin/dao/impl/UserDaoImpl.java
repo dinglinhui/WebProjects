@@ -45,7 +45,7 @@ public class UserDaoImpl implements IUserDao {
 	@Override
 	public boolean isUser(UserEntity user) {
 		Session session = this.getSession();
-		String hql = "from UserEntity where email =? or username =? and password = ?";
+		String hql = "from UserEntity where (email =? or username =?) and password = ?";
 		Query query = session.createQuery(hql);
 		query.setString(0, user.getUsername());
 		query.setString(1, user.getUsername());
