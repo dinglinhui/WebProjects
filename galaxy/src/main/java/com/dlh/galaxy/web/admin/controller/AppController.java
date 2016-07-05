@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.dlh.galaxy.web.admin.controller;
 
 import javax.annotation.Resource;
