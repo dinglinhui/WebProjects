@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="../../ext-4.1/resources/css/ext-all.css"/>
+	<link rel="stylesheet" type="text/css" href="datetime.css"/>
+	<script type="text/javascript" src = "../../ext-4.1/ext-all.js"></script>
+	<script type="text/javascript" src = "../../ext-4.1/locale/ext-lang-zh_CN.js"></script>
+	<script type="text/javascript" src = "datetime.js"></script>
+	<script type="text/javascript">
+		function test(){
+			console.log(Ext.Date.clearTime(new Date(), true));
+		}
+	</script>
+</head>
+<body>
+	
+	<input type="button" value = 'Test' onclick="test()"/>
+	<div id = "testDiv"></div>
+	<div id = "testBtn"></div>
+</body>
+</html>

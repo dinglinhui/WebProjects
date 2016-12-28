@@ -1,0 +1,181 @@
+.feed-picker-url {
+	float: left;
+	width: 425px;
+}
+
+.feed-picker-title { /*float: left;*/
+	color: #777;
+	font-size: 10px;
+}
+
+.feed-list {
+	padding: 0 3px 0 3px;
+}
+
+.feed-list-item {
+	margin-top: 3px;
+	padding-left: 20px;
+	font-size: 11px;
+	line-height: 20px;
+	cursor: pointer;
+	background: url(../images/icons/feed-balloon.png) no-repeat 0 2px;
+	border: 1px solid #fff;
+}
+
+.feed-list .x-item-selected {
+	font-weight: bold;
+	color: #15428B;
+	background-color: #DFE8F6;
+	border: 1px dotted #A3BAE9;
+}
+
+.feed-list-item-hover {
+	background-color: #eee;
+}
+
+.topic {
+	padding: 2px 0 0 20px;
+	background: transparent url(../images/icons/post.gif) no-repeat;
+}
+
+.topic b {
+	font-family: tahoma, verdana;
+	display: block;
+	color: #333;
+}
+
+.author {
+	color: #333
+}
+
+.post-date {
+	font-weight: bold;
+	color: #333;
+}
+
+.feed-grid .x-grid-rowbody {
+	margin: 5px 20px 10px 25px !important;
+	color: #555;
+	font-size: 11px;
+}
+
+/* Preview classes */
+.articlepreview .x-toolbar {
+	border-top-width: 1px !important;
+}
+
+.preview .x-panel-body { /* background: #fff; */
+	color: #222;
+	font: normal 12px tahoma, verdana, arial, sans-serif;
+}
+
+.preview .x-panel-body p {
+	line-height: 18px;
+	margin: 8px 0;
+}
+
+.preview .x-panel-body ul {
+	margin-left: 18px;
+}
+
+.preview .x-panel-body ul li {
+	display: list-item;
+	list-style-image: none !important;
+	list-style-position: outside !important;
+	list-style-type: disc !important;
+	margin-left: 18px;
+}
+
+.preview .x-panel-body pre,#preview .x-panel-body code {
+	background: #f1f1f1;
+	display: block;
+}
+
+.preview .x-panel-body h4.post-author {
+	font-weight: normal;
+	color: #555;
+	font-size: 11px;
+}
+
+.preview .x-panel-body span.post-date {
+	font-weight: normal;
+	color: #555;
+	float: right;
+	font-size: 11px;
+}
+
+.preview .x-panel-body div.post-data {
+	background: #f1f2f4;
+	padding: 5px;
+	border-bottom: 1px solid #dadadb;
+}
+
+.preview .x-panel-body div.post-body {
+	padding: 10px;
+}
+
+.x-tab-bar-body {
+	border-width: 1px 1px 0 1px !important;
+}
+
+.header-logo {
+	background: #dfe8f6 url("../images/logo-briglow.png") no-repeat 20px 10px;
+}
+
+.menu-title {
+	background: #D6E3F2;
+	border-style: solid;
+	border-color: #DAE6F4 #99bbe8 #99bbe8 #DAE6F4;
+	border-width: 1px;
+	margin: -2px -2px 0;
+	color: #15428b;
+	font: bold 10px tahoma, arial, verdana, sans-serif;
+	display: block;
+	padding: 3px;
+}
+
+.x-panel-ghost {
+	z-index: 1;
+}
+
+.x-border-layout-ct {
+	background: #DFE8F6;
+}
+
+.x-portal-body {
+	padding: 0 0 0 8px;
+}
+
+.x-portal .x-portal-column {
+	padding: 8px 8px 0 0;
+}
+
+.x-portal .x-panel-dd-spacer {
+	border: 2px dashed #99bbe8;
+	background: #f6f6f6;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	margin-bottom: 10px;
+}
+
+.x-portlet {
+	margin-bottom: 10px;
+	padding: 1px;
+}
+
+.x-portlet .x-panel-body {
+	background: #fff;
+}
+
+.portlet-content {
+	padding: 10px;
+	font-size: 11px;
+}
+
+.user {
+	background: url(../image/ext/user.gif) no-repeat;
+}
+
+.key {
+	background: url(../image/ext/key.gif) no-repeat;
+}

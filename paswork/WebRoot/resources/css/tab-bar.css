@@ -1,0 +1,41 @@
+/* CSS Document */
+
+.ui-tab-bar{
+	padding-top:0px;
+}
+.ui-tab-bar .x-tab-bar{
+	border:0 !important;
+}
+
+.ui-tab-bar .x-tab-bar-strip {
+    top: 31px !important; /* Default value is 20*/
+}
+
+.ui-tab-bar .x-tab-bar-strip-default-top{
+	height:0px !important;
+}
+
+
+.ui-tab-bar .ui-tab-body{
+	/* border:0 !important; */
+}
+
+.ui-tab-bar .x-tab-bar .x-tab-bar-body {
+    height: 33px !important; /* Default value is 23*/
+	
+    /*border: 0 !important;*/ /* Overides the border that appears on resizing the grid */
+}
+
+.ui-tab-bar .x-tab-bar .x-tab-bar-body .x-box-inner {
+    height: 31px !important; /* Default value is 21*/
+}
+
+.ui-tab-bar .x-tab-bar .x-tab-bar-body .x-box-inner .x-tab {
+    height: 31px !important; /* Default value is 21*/
+}
+
+.ui-tab-bar .x-tab-bar .x-tab-bar-body .x-box-inner .x-tab-button {
+    height: 24px !important; /* Default value 13*/
+    line-height: 24px !important; /* Default value 13*/
+	margin-top:5px;
+}

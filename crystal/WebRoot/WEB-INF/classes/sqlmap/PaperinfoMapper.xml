@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dinglinhui.crystalstudio.dao.AutoCompleteDao">
+	<resultMap id="PaperinfoResultMap" type="com.dinglinhui.crystalstudio.pojo.Paperinfo">
+		<id property="PAPERID" column="PAPERID" jdbcType="VARCHAR" />
+		<result property="TITLE" column="TITLE" jdbcType="VARCHAR" />
+		<result property="ABSTRACT" column="ABSTRACT" jdbcType="VARCHAR" />
+		<result property="SUBJECT" column="SUBJECT" jdbcType="VARCHAR" />
+		<result property="PROFESSION" column="PROFESSION" jdbcType="VARCHAR" />
+		<result property="DIRECT" column="DIRECT" jdbcType="VARCHAR" />
+		<result property="PROGRAME" column="PROGRAME" jdbcType="VARCHAR" />
+		<result property="DATABASE" column="DATABASE" jdbcType="VARCHAR" />
+		<result property="SUMMARY" column="SUMMARY" jdbcType="VARCHAR" />
+		<result property="INPUTDATE" column="INPUTDATE" jdbcType="TIMESTAMP" />
+		<result property="COMPOSITE" column="COMPOSITE" jdbcType="VARCHAR" />
+		<result property="ISCODE" column="ISCODE" jdbcType="INTEGER" />
+		<result property="SCORE" column="SCORE" jdbcType="VARCHAR" />
+		<result property="PRICE" column="PRICE" jdbcType="VARCHAR" />
+		<result property="BUYTIMES" column="BUYTIMES" jdbcType="INTEGER" />
+		<result property="PATH" column="PATH" jdbcType="VARCHAR" />
+		<result property="PROVIDER" column="PROVIDER" jdbcType="VARCHAR" />
+		<result property="PAPERINDEX" column="PAPERINDEX" jdbcType="VARCHAR" />
+		<result property="PAPERDATE" column="PAPERDATE" jdbcType="VARCHAR" />
+		<result property="FJPRICE" column="FJPRICE" jdbcType="VARCHAR" />
+		<result property="BZ" column="BZ" jdbcType="VARCHAR" />
+		<result property="TEACHER" column="TEACHER" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="auto" parameterType="string" resultType="string">
+		<![CDATA[
+			SELECT TITLE FROM paperinfo 
+			WHERE upper(TITLE) LIKE concat('%',#{TITLE},'%')
+			ORDER BY paperid limit 0,10
+		]]>
+	</select>
+</mapper>
