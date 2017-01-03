@@ -4,8 +4,9 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-        <property name="context-root" value="/galaxy"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/journaldev"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/journaldev/java"/>
         <property name="java-output-path" value="/galaxy/target/classes"/>
+        <property name="context-root" value="galaxy"/>
     </wb-module>
 </project-modules>

@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/journaldev/java/com/journaldev/basic/TestCopy.java=UTF-8
+encoding//src/journaldev/java/com/journaldev/basic/TestInteger.java=UTF-8
+encoding//src/journaldev/java/com/journaldev/utils/ClassScanner.java=UTF-8
+encoding//src/journaldev/java/com/journaldev/utils/StringUtil.java=UTF-8
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/main/webapp/WEB-INF/views/login.jsp=UTF-8
