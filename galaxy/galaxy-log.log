@@ -1,0 +1,86 @@
+[INFO][2017-01-04 13:18:12,997][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][2017-01-04 13:18:13,040][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@23ceabc1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5d5eef3d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@56f4468b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6cc4c815, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3a82f6ef]
+[INFO][2017-01-04 13:18:13,175][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+[INFO][2017-01-04 13:18:13,590][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[INFO][2017-01-04 13:18:13,806][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@e25b2fe: startup date [Wed Jan 04 13:18:13 CST 2017]; root of context hierarchy
+[INFO][2017-01-04 13:18:14,007][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [config.properties]
+[ERROR][2017-01-04 13:18:14,471][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2017-01-04 13:18:14,629][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[INFO][2017-01-04 13:18:14,937][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+[INFO][2017-01-04 13:18:14,948][org.hibernate.Version]HHH000412: Hibernate Core {4.2.19.Final}
+[INFO][2017-01-04 13:18:14,955][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO][2017-01-04 13:18:14,958][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+[INFO][2017-01-04 13:18:17,173][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[INFO][2017-01-04 13:18:17,348][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+[INFO][2017-01-04 13:18:17,355][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+[INFO][2017-01-04 13:18:17,413][org.hibernate.validator.internal.util.Version]HV000001: Hibernate Validator 5.1.3.Final
+[INFO][2017-01-04 13:18:20,091][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+[INFO][2017-01-04 13:18:20,091][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+[INFO][2017-01-04 13:18:20,096][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+[INFO][2017-01-04 13:18:20,200][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: db_galaxy.t_user
+[INFO][2017-01-04 13:18:20,201][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [upassword, utelephone, uid, ucellphone, uname, usex, uaddress, uemail]
+[INFO][2017-01-04 13:18:20,201][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2017-01-04 13:18:20,201][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2017-01-04 13:18:20,202][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+[INFO][2017-01-04 13:18:20,453][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2017-01-04 13:18:14",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:624693846, ConnectTime:"2017-01-04 13:18:17", UseCount:2, LastActiveTime:"2017-01-04 13:18:20"}
+	]
+}] of Hibernate SessionFactory for HibernateTransactionManager
+[INFO][2017-01-04 13:18:21,557][org.springframework.test.context.transaction.TransactionContext]Began transaction (1) for test context [DefaultTestContext@352e612e testClass = UserDaoTest, testInstance = com.dlh.galaxy.apps.dao.UserDaoTest@65f00478, testMethod = testIsExist@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2424686b testClass = UserDaoTest, locations = '{classpath:spring.xml, classpath:spring-hibernate.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@6ea94d6a]; rollback [true]
+[WARN][2017-01-04 13:18:21,707][org.hibernate.hql.internal.ast.HqlSqlWalker][DEPRECATION] Encountered positional parameter near line 1, column 61.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+[WARN][2017-01-04 13:18:21,722][org.hibernate.hql.internal.ast.HqlSqlWalker][DEPRECATION] Encountered positional parameter near line 1, column 76.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+[WARN][2017-01-04 13:18:21,722][org.hibernate.hql.internal.ast.HqlSqlWalker][DEPRECATION] Encountered positional parameter near line 1, column 92.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+[INFO][2017-01-04 13:18:21,972][org.springframework.test.context.transaction.TransactionContext]Rolled back transaction for test context [DefaultTestContext@352e612e testClass = UserDaoTest, testInstance = com.dlh.galaxy.apps.dao.UserDaoTest@65f00478, testMethod = testIsExist@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2424686b testClass = UserDaoTest, locations = '{classpath:spring.xml, classpath:spring-hibernate.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[INFO][2017-01-04 13:18:22,008][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@e25b2fe: startup date [Wed Jan 04 13:18:13 CST 2017]; root of context hierarchy
+[INFO][2017-01-04 13:18:22,026][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed
+[INFO][2017-01-04 13:19:41,100][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO][2017-01-04 13:19:41,137][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@23ceabc1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5d5eef3d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@56f4468b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6cc4c815, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3a82f6ef]
+[INFO][2017-01-04 13:19:41,300][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+[INFO][2017-01-04 13:19:41,615][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+[INFO][2017-01-04 13:19:41,720][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@e25b2fe: startup date [Wed Jan 04 13:19:41 CST 2017]; root of context hierarchy
+[INFO][2017-01-04 13:19:41,960][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from class path resource [config.properties]
+[ERROR][2017-01-04 13:19:42,503][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2017-01-04 13:19:42,698][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[INFO][2017-01-04 13:19:43,017][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+[INFO][2017-01-04 13:19:43,030][org.hibernate.Version]HHH000412: Hibernate Core {4.2.19.Final}
+[INFO][2017-01-04 13:19:43,040][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO][2017-01-04 13:19:43,042][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+[INFO][2017-01-04 13:19:43,926][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[INFO][2017-01-04 13:19:44,133][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+[INFO][2017-01-04 13:19:44,143][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+[INFO][2017-01-04 13:19:44,213][org.hibernate.validator.internal.util.Version]HV000001: Hibernate Validator 5.1.3.Final
+[INFO][2017-01-04 13:19:46,081][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+[INFO][2017-01-04 13:19:46,081][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+[INFO][2017-01-04 13:19:46,085][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+[INFO][2017-01-04 13:19:46,149][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: db_galaxy.t_user
+[INFO][2017-01-04 13:19:46,150][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [upassword, utelephone, uid, ucellphone, uname, usex, uaddress, uemail]
+[INFO][2017-01-04 13:19:46,150][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2017-01-04 13:19:46,150][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2017-01-04 13:19:46,151][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+[INFO][2017-01-04 13:19:46,246][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2017-01-04 13:19:42",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:624693846, ConnectTime:"2017-01-04 13:19:43", UseCount:2, LastActiveTime:"2017-01-04 13:19:46"}
+	]
+}] of Hibernate SessionFactory for HibernateTransactionManager
+[INFO][2017-01-04 13:19:46,341][org.springframework.test.context.transaction.TransactionContext]Began transaction (1) for test context [DefaultTestContext@352e612e testClass = UserDaoTest, testInstance = com.dlh.galaxy.apps.dao.UserDaoTest@65f00478, testMethod = testIsExist@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2424686b testClass = UserDaoTest, locations = '{classpath:spring.xml, classpath:spring-hibernate.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate4.HibernateTransactionManager@6ea94d6a]; rollback [true]
+[WARN][2017-01-04 13:19:46,479][org.hibernate.hql.internal.ast.HqlSqlWalker][DEPRECATION] Encountered positional parameter near line 1, column 61.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+[WARN][2017-01-04 13:19:46,481][org.hibernate.hql.internal.ast.HqlSqlWalker][DEPRECATION] Encountered positional parameter near line 1, column 76.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+[WARN][2017-01-04 13:19:46,481][org.hibernate.hql.internal.ast.HqlSqlWalker][DEPRECATION] Encountered positional parameter near line 1, column 92.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+[INFO][2017-01-04 13:19:46,719][org.springframework.test.context.transaction.TransactionContext]Rolled back transaction for test context [DefaultTestContext@352e612e testClass = UserDaoTest, testInstance = com.dlh.galaxy.apps.dao.UserDaoTest@65f00478, testMethod = testIsExist@UserDaoTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2424686b testClass = UserDaoTest, locations = '{classpath:spring.xml, classpath:spring-hibernate.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+[INFO][2017-01-04 13:19:46,726][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@e25b2fe: startup date [Wed Jan 04 13:19:41 CST 2017]; root of context hierarchy
+[INFO][2017-01-04 13:19:46,746][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} closed

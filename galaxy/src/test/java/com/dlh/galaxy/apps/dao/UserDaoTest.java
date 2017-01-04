@@ -25,8 +25,8 @@ public class UserDaoTest {
 	@Test
 	public void testIsExist() {
 		UserEntity user = new UserEntity();
-		user.setUsername("dlh");
-		user.setPassword("123456");
+		user.setUsername("admin");
+		user.setPassword("admin");
 		boolean result = userDao.isExist(user);
 		System.out.println(result);
 	}
