@@ -1,4 +1,4 @@
-package com.journaldev.java8.defaultmethod;
+package com.journaldev.java8.features;
 
 public class MyClass implements Interface1, Interface2 {
 

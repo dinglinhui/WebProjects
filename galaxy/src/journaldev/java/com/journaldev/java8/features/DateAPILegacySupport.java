@@ -1,4 +1,4 @@
-package com.journaldev.java8.time;
+package com.journaldev.java8.features;
 
 import java.time.Instant;
 import java.time.LocalDateTime;

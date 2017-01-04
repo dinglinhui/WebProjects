@@ -1,4 +1,4 @@
-package com.journaldev.java8.loop;
+package com.journaldev.java8.features;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.lang.Integer;
 
-public class Java8ForEachExample {
+public class ForEachExample {
 
 	public static void main(String[] args) {
 

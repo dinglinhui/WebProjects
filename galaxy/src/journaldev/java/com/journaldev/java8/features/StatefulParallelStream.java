@@ -1,4 +1,4 @@
-package com.journaldev.java8.stream;
+package com.journaldev.java8.features;
 
 import java.util.ArrayList;
 import java.util.Arrays;

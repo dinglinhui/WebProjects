@@ -1,4 +1,4 @@
-package com.journaldev.java8.lambda;
+package com.journaldev.java8.features;
 
 import java.util.*;
 import java.util.function.Predicate;

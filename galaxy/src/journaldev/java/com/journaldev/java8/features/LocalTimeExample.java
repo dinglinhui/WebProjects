@@ -1,4 +1,4 @@
-package com.journaldev.java8.time;
+package com.journaldev.java8.features;
 
 import java.time.LocalTime;
 import java.time.ZoneId;

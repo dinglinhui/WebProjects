@@ -1,4 +1,4 @@
-package com.journaldev.java8.loop;
+package com.journaldev.java8.features;
 
 import java.util.List;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Stream implements ArticleI {
+public class ArticleStream implements ArticleI {
 
 	public List<Article> articles;
 
