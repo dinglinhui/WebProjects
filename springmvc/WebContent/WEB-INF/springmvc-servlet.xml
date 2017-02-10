@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"  xmlns:aop="http://www.springframework.org/schema/aop" xmlns:task="http://www.springframework.org/schema/task"   xsi:schemaLocation="  
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+    http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+     <!--注解说明 -->  
+    <context:annotation-config /> 
+    <!-- 默认扫描的包路径 -->  
+    <context:component-scan base-package="com.kingnod" />  
+    <mvc:default-servlet-handler/>
+    <!-- 添加注解驱动 -->  
+    <mvc:annotation-driven >
+    	<!--使用RestTemplate调用第三方接口时防止乱码默认是ISO-8859-1编码  -->
+	    <mvc:message-converters register-defaults="true">
+	        <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+	            <property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+	        </bean>
+	    </mvc:message-converters>
+    </mvc:annotation-driven> 
+  	<aop:aspectj-autoproxy/>
+  	<!-- <bean id="logAspectBean" class="com.kingnod.aop.LogAspect"/> -->
+  	
+  	<!-- 启用@AspectJ 支持  加入后注解反而不能用了  废弃该注解-->  
+	<!-- <bean class="org.springframeword.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator" />   -->
+	<!-- task 定时器任务扫描注解 -->  
+	<!-- <task:annotation-driven/> --> 
+     <!-- 定义跳转的文件的前后缀 -->  
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+        <property name="prefix" value="/WEB-INF/" />  
+        <property name="suffix" value=".jsp" />  
+    </bean> 
+    <!-- 静态文件访问，此路径下的文件不做拦截 -->
+    <mvc:resources location="/static/"  mapping="/static/**" /> 
+    <!-- 附件上传 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+    	<property name="maxUploadSize" value="2097152"></property>   
+	</bean>
+	<!-- scanner redis properties  --> 
+    <context:property-placeholder location="/WEB-INF/redis.properties" />
+    <!-- 引入同文件夹下的redis属性配置文件 -->
+    <import resource="/redis-context.xml"/>
+    <!-- aop xml配置类型 -->
+	<!-- <aop:config>  
+	    <aop:aspect id="authAspect" ref="logAspectBean">  
+	    	切入点
+	   		<aop:pointcut id="authP" expression="execution(* com.kingnod.controller.LoginController.loginPost(..))" /> 
+	   		 
+	    	<aop:before method="before" pointcut-ref="authP" />    
+                
+            <aop:after-returning returning="parame" method="afterReturn" pointcut-ref="authP"/>    
+                
+	    </aop:aspect>  
+	</aop:config>   -->
+</beans>

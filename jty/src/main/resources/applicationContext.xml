@@ -1,0 +1,99 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd"
+	default-lazy-init="true">
+
+	<description>Spring公共配置 </description>
+	
+	<!-- 读取配置文件 -->
+	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/application.properties" />
+
+	<!-- 使用annotation 自动注册bean, 并保证@Required、@Autowired的属性被注入 -->
+	<context:component-scan base-package="com.tianyu.jty">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+	</context:component-scan>
+
+	<!-- 定义Hibernate Session工厂 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> 
+		<property name="dataSource" ref="dataSource"/>
+		<property name="namingStrategy">
+			<bean class="org.hibernate.cfg.ImprovedNamingStrategy" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+     			<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+     			<prop key="net.sf.ehcache.configurationResourceName">${hibernate.ehcache.configFile}</prop>
+			
+			</props>
+		</property>
+		<property name="packagesToScan" value="com.tianyu.jty" /><!-- 如果多个，用“,”分隔 -->
+	</bean>
+
+	<!-- 定义事务 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">  
+        <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>
+    
+	<!-- 配置 Annotation 驱动，扫描@Transactional注解的类定义事务  -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+	
+	<!-- 配置 JSR303 Bean Validator 定义 -->
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+
+	<!-- 数据源配置, 使用druid连接池 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="filters" value="mergeStat" />
+		<!-- 密码解密 -->
+		<!-- <property name="filters" value="config" />
+		<property name="connectionProperties" value="config.decrypt=true" /> -->
+		<!-- 申请连接的时候检测 -->
+		<property name="testWhileIdle" value="true"></property> 
+		<!-- 检测连接 -->
+		<property name="validationQuery" value="select 'x'"></property>
+		<!--maxActive: 最大连接数量 -->
+		<property name="maxActive" value="${jdbc.pool.maxActive}" />
+		<!--initialSize: 初始化连接 -->
+		<property name="initialSize" value="${jdbc.pool.maxIdle}" />
+	</bean>
+		
+	<!-- aop记录方法执行时间 -->
+	<!-- <aop:config>
+        拦截 service 包中的所有方法
+        <aop:advisor id="methodTimeLog" advice-ref="methodTimeAdvice" pointcut="execution(* *..service..*(..))"/>
+    </aop:config>
+    <bean id="methodTimeAdvice" class="com.ty.tianyu.system.utils.MethodTimeAdvice"/> -->
+    
+    <!-- 声明任务工厂 -->  
+    <bean id="scheduler" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+        <property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:quartz.properties" />
+		<!--applicationContextSchedulerContextKey： 
+		是org.springframework.scheduling.quartz.SchedulerFactoryBean这个类中
+		把spring上下 文以key/value的方式存放在了quartz的上下文中了，
+		可以用applicationContextSchedulerContextKey所定义的key得到对应的spring上下文-->  
+		<property name="applicationContextSchedulerContextKey" value="applicationContextKey"/>    
+    </bean>  
+    
+</beans>

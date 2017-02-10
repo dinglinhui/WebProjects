@@ -79,12 +79,11 @@
 		<location>/WEB-INF/views/errors/error.jsp</location>
 	</error-page>
 	<welcome-file-list>
-		<welcome-file>theme/shield/index.html</welcome-file>
-		<!-- <welcome-file>index.html</welcome-file>
+		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file> -->
+		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>

@@ -1,0 +1,2 @@
+本模板采用springmvc+hibernate+mysql。欢迎有志之士添砖加瓦，
+目前已经集成的技术有搜索引擎elasticsearch，缓存数据库redis,Comet 框架pushlet,前端框架bootstrap 
