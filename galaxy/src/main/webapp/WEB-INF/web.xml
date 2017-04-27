@@ -7,16 +7,20 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath:spring.xml,
-			classpath:spring-hibernate.xml
+			classpath*:/spring.xml,
+			classpath*:/spring-hibernate.xml
 		</param-value>
 	</context-param>
+	<!--spring ApplicationContext 载入 -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<listener>
 		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
 	</listener>
+
+	<!-- Filter 定义 -->
+	<!-- Hibernate Open Session In View filter -->
 	<filter>
 		<filter-name>openSessionInViewFilter</filter-name>
 		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
@@ -25,6 +29,12 @@
 			<param-value>true</param-value>
 		</init-param>
 	</filter>
+	<filter-mapping>
+		<filter-name>openSessionInViewFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 编码 filter -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -54,21 +64,21 @@
 		<servlet-name>springMVC</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<error-page>
+<!-- 	<error-page>
 		<error-code>403</error-code>
-		<location>/WEB-INF/views/errors/page403.jsp</location>
+		<location>/WEB-INF/views/error-403.jsp</location>
 	</error-page>
 	<error-page>
 		<error-code>404</error-code>
-		<location>/WEB-INF/views/errors/page404.jsp</location>
+		<location>/WEB-INF/views/error-404.jsp</location>
 	</error-page>
 	<error-page>
 		<error-code>405</error-code>
-		<location>/WEB-INF/views/errors/page405.jsp</location>
+		<location>/WEB-INF/views/error-405.jsp</location>
 	</error-page>
 	<error-page>
 		<error-code>500</error-code>
-		<location>/WEB-INF/views/errors/page500.jsp</location>
+		<location>/WEB-INF/views/error-500.jsp</location>
 	</error-page>
 	<error-page>
 		<exception-type>java.lang.NullPointerException</exception-type>
@@ -77,7 +87,7 @@
 	<error-page>
 		<exception-type>java.lang.Exception</exception-type>
 		<location>/WEB-INF/views/errors/error.jsp</location>
-	</error-page>
+	</error-page> -->
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>

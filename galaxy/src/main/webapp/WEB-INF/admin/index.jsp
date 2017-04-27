@@ -2,7 +2,7 @@
 <%
 	String cxtPath = request.getContextPath();
 	String serverPath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
-	String appBasePath = serverPath + cxtPath + "/";
+	String appBasePath = serverPath + cxtPath + "/admin/";
 	pageContext.setAttribute("appBasePath", appBasePath);
 %>
 

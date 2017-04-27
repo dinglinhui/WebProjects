@@ -27,7 +27,7 @@ public class ViewController {
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public ModelAndView home() {
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("home");
+		modelAndView.setViewName("home/index");
 		return modelAndView;
 	}
 }

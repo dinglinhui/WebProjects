@@ -4,6 +4,7 @@
 <title>正在跳转,请稍候...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="refresh" content="0;url=app/login">
+<!-- <meta http-equiv="refresh" content="0;url=view/home"> -->
 </head>
 <body>
 </body>

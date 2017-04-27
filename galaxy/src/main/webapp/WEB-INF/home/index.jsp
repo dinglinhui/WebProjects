@@ -2,416 +2,497 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/home/";
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<base href="<%=basePath%>">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ATSpro</title>
-<link href="<%=basePath%>view/css/reset.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="<%=basePath%>view/css/styles.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="<%=basePath%>view/css/print.css" rel="stylesheet" type="text/css" media="print" />
-<link rel="stylesheet" type="text/css" href="<%=basePath%>view/css/brower.css" media="all" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SHIELD - Free Bootstrap 3 Theme">
+    <meta name="author" content="Carlos Alvarez - Alvarez.is - blacktie.co">
+    
+    <title>DINGLINHUI.COM</title>
 
-<script type="text/javascript" src="<%=basePath%>resources/jquery/jquery-1.8.3.js"></script>
-<script type="text/javascript" src="<%=basePath%>view/js/brower.js"></script>
-<script type="text/javascript" src="<%=basePath%>view/js/custom-menu.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>bootstrap/css/bootstrap.min.css" />
 
-<link href="<%=basePath%>view/css/onebyone.css" rel="stylesheet" type="text/css" media="screen" />
-<script src="<%=basePath%>view/js/jquery.cycle.all.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-	$(function() {
-		$('#slider').cycle({
-			fx : 'scrollLeft',
-			timeout : 4100,
-			speed : 500,
-			pager : '#cyclenav'
-		});
-	});
-</script>
-<link rel="stylesheet" href="<%=basePath%>view/css/coda-slider-2.0.css" type="text/css"
-	media="screen" />
-<script src="<%=basePath%>view/js/jquery.easing.1.3.js" type="text/javascript"></script>
-<script src="<%=basePath%>view/js/jquery.coda-slider-2.0.js" type="text/javascript"></script>
-<script type="text/javascript">
-	$().ready(function() {
-		$('#coda-slider-1').codaSlider();
-	});
-</script>
-<script src="<%=basePath%>view/js/jquery.ui.core.js" type="text/javascript"></script>
-<script src="<%=basePath%>view/js/jquery.ui.widget.js" type="text/javascript"></script>
-<script src="<%=basePath%>view/js/jquery.ui.accordion.js" type="text/javascript"></script>
-<script type="text/javascript">
-	jQuery(function() {
-		jQuery("#accordion").accordion({
-			autoHeight : false,
-			navigation : true
-		});
-	});
-</script>
-<link rel="stylesheet" href="<%=basePath%>view/css/prettyPhoto.css" type="text/css"
-	media="screen" />
-<script src="<%=basePath%>view/js/jquery.prettyPhoto.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8">
-	$(document).ready(function() {
-		$("a[rel^='prettyPhoto']").prettyPhoto();
-	});
-</script>
-<script src="<%=basePath%>view/js/image-hover.js" type="text/javascript"></script>
-<script src="<%=basePath%>view/js/mailmask.js" type="text/javascript"></script>
+    <!-- Custom styles for this template -->
+    <link href="<%=basePath%>css/main.css" rel="stylesheet">
+    <link href="<%=basePath%>css/icomoon.css" rel="stylesheet">
+    <link href="<%=basePath%>css/animate-custom.css" rel="stylesheet">
 
-</head>
-<body>
-	<div id="wrapper">
-		<!-- start header -->
-		<div id="header">
-			<div class="header-content">
-				<a class="logo ir" rel="home" href="/">view</a>
-				<ul class="topnav alignleft">
-					<li class="first active"><a href="#" title="Home"><s:text name="view.header.topnav.home"></s:text></a></li>
-					<li><a href="#" title="About"><s:text name="view.header.topnav.about"></s:text></a>
-						<div class="subnav subnav3">
-							<div class="clearfix" id="home">
-								<dl class="alignleft">
-									<dd>
-										<a href="#" title="Cycle Slider with Easing function">Easing
-											Function</a>
-									</dd>
-									<dd>
-										<a href="#" title="Full Width Image Slider">Full Width
-											Image</a>
-									</dd>
-								</dl>
-							</div>
-						</div></li>
-					<li><a href="#" title="Work"><s:text name="view.header.topnav.work"></s:text></a>
-						<div class="subnav subnav1">
-							<div class="clearfix" id="services">
-								<dl class="alignleft">
-									<dt>Shortcodes</dt>
-									<dd>
-										<a href="#" title="Typography &amp; Elements">Typography
-											&amp; Elements</a>
-									</dd>
-									<dd>
-										<a href="#" title="Columns">Columns</a>
-									</dd>
-									<dd>
-										<a href="#" title="Price Table">Price Table</a>
-									</dd>
-									<dt class="head">Navi Options</dt>
-									<dd>
-										<a href="#" title="On Click">OnClick</a>
-									</dd>
-								</dl>
-							</div>
-						</div></li>
-					<li><a href="#" title="Blog"><s:text name="view.header.topnav.blog"></s:text></a>
-						<div class="subnav subnav3">
-							<div class="clearfix" id="blog">
-								<dl class="alignleft">
-									<dd>
-										<a href="#" title="Overview">Overview</a>
-									</dd>
-									<dd>
-										<a href="#" title="Single Blog Entry">Single Blog Entry</a>
-									</dd>
-								</dl>
-							</div>
-						</div></li>
-					<li><a href="#" title="Contact"><s:text name="view.header.topnav.contact"></s:text></a>
-						<div class="subnav subnav3">
-							<div class="clearfix" id="company">
-								<dl class="alignleft">
-									<dd>
-										<a href="#" title="About Us">About Us</a>
-									</dd>
-									<dd>
-										<a href="#" title="Our Team">Our Team</a>
-									</dd>
-								</dl>
-							</div>
-						</div></li>
-				</ul>
-				<ul class="topnav2 alignright">
-					<!-- 指定URL为英文的语言设置 -->
-					<s:url id="english" action="system!initLocale">
-						<!-- 参数request_locale设置英文 -->
-						<s:param name="reqCode">en_US</s:param>
-					</s:url>
-					<!-- 英文语言设置的链接定义 -->
-					<li><s:a href="%{english}" title="English">English</s:a></li>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    
+    <script type="text/javascript" src="<%=basePath%>js/jquery.min.js"></script>
+	<script type="text/javascript" src="<%=basePath%>js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
+  
+  	<div id="navbar-main">
+      <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-shield" style="font-size:30px; color:#3498db;"></span>
+          </button>
+          <a class="navbar-brand hidden-xs hidden-sm" href="#home"><span class="icon icon-shield" style="font-size:18px; color:#3498db;"></span></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#home" class="smoothScroll">Home</a></li>
+			<li> <a href="#about" class="smoothScroll"> About</a></li>
+			<li> <a href="#services" class="smoothScroll"> Services</a></li>
+			<li> <a href="#team" class="smoothScroll"> Team</a></li>
+			<li> <a href="#portfolio" class="smoothScroll"> Portfolio</a></li>
+			<li> <a href="#blog" class="smoothScroll"> Blog</a></li>
+			<li> <a href="#contact" class="smoothScroll"> Contact</a></li>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    </div>
+
+  
+  
+		<!-- ==== HEADERWRAP ==== -->
+	    <div id="headerwrap" id="home" name="home" style="background:url('<%=basePath%>images/header_bg.jpg') no-repeat center top; background-size: cover;">
+			<header class="clearfix">
+	  		 		<h1><span class="icon icon-shield"></span></h1>
+	  		 		<p>DINGLINHUI.COM</p>
+	  		 		<p>dinglinhui@hotmail.com</p>
+	  		</header>	    
+	    </div><!-- /headerwrap -->
+
+		<!-- ==== GREYWRAP ==== -->
+		<div id="greywrap">
+			<div class="row">
+				<div class="col-lg-4 callout">
+					<span class="icon icon-stack"></span>
+					<h2>Bootstrap 3</h2>
+					<p>Shield Theme is powered by Bootstrap 3. The incredible Mobile First Framework is the best option to run your website. </p>
+				</div><!-- col-lg-4 -->
 					
-					<!-- 指定URL为中文的语言设置 -->
-					<s:url id="chinese" action="system!initLocale">
-						<!-- 参数request_locale设置中文 -->
-						<s:param name="reqCode">zh_CN</s:param>
-					</s:url>
-					<!-- 中文语言设置的链接定义 -->
-					<li><s:a href="%{chinese}" title="Chinese">中文</s:a></li>
-				</ul>
-			</div>
-			<!-- <div id="header-bottom" class="clear"></div> -->
-		</div>
-		<!-- end header -->
-
-		<!-- start content -->
-		<div id="container" class="clearfix">
-			<div class="content">
-				<!-- start Slidebox -->
-				<div id="Slidebox">
-					<!--flash begin-->
-					
-					<div id="flashBg">
-						<div id="flashLine">
-							<div id="flash">
-								<%-- <c:forEach items="${pictureView.listPic}" var="picture">
-									<%=basePath%>${picture.imageplace}${picture.imagename}
-									<a name="#ffffff" id="${picture.usedid}" target="_blank" href="#" style="display:block;background: url('<%=basePath%>${picture.imageplace}${picture.imagename} }') no-repeat scroll 50% 0 transparent;"></a> 
-								</c:forEach> --%>
-								<a name="#ffffff" id="flash1" target="_blank" href="#" style="display:block;background: url('<%=basePath%>view/images/slides/rowboat.jpg') no-repeat scroll 50% 0 transparent;"></a> 
-								<a name="#ffffff" id="flash2" target="_blank" href="#" style="display:block;background: url('<%=basePath%>view/images/slides/feature-08.jpg') no-repeat scroll 50% 0 transparent;"></a>
-								<a name="#ffffff" id="flash3" target="_blank" href="#" style="display:block;background: url('<%=basePath%>view/images/slides/bg-initiatives-index.jpg') no-repeat scroll 50% 0 transparent;"></a> 
-								<a name="#ffffff" id="flash4" target="_blank" href="#" style="display:block;background: url('<%=basePath%>view/images/slides/google-impact-award.jpg') no-repeat scroll 50% 0 transparent;"></a>
-								<a name="#ffffff" id="flash5" target="_blank" href="#" style="display:block;background: url('<%=basePath%>view/images/slides/WWF-Case-Story-homepage-large-screen.jpg') no-repeat scroll 50% 0 transparent;"></a> 
-								<a name="#ffffff" id="flash6" target="_blank" href="#" style="display:block;background: url('<%=basePath%>view/images/slides/GPN112363_elephants_(c)_Martin_Harvey_WWF_Canon.jpg') no-repeat scroll 50% 0 transparent;"></a>		
-								
-								<div class="flash_bar">
-									<div class="dq" id="f1" onclick="changeflash(1)"></div>
-									<div class="no" id="f2" onclick="changeflash(2)"></div>
-									<div class="no" id="f3" onclick="changeflash(3)"></div>
-									<div class="no" id="f4" onclick="changeflash(4)"></div>
-									<div class="no" id="f5" onclick="changeflash(5)"></div>
-									<div class="no" id="f6" onclick="changeflash(6)"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--flash end-->
-				</div>
-				<!--Slide & Banner  End-->
+				<div class="col-lg-4 callout">
+					<span class="icon icon-eye"></span>
+					<h2>Retina Ready</h2>
+					<p>You can use this theme with your iPhone, iPad or MacBook Pro. This theme is retina ready and that is awesome. </p>
+				</div><!-- col-lg-4 -->	
 				
-				<div class="content_new"> 
-					<div id="quote" class="clear">
-						<div class="coda-slider-wrapper">
-							<div class="coda-slider preload" id="coda-slider-1">
-								<div class="panel">
-									<div class="panel-wrapper">
-										<div class="logos alignleft">
-											<img src="<%=basePath%>view/images/logos/audiojungle.jpg" alt="audiojungle" />
-										</div>
-										<div class="quote">
-											<p>Over the last eighteen months our sales have increased
-												by 200%, since the launch of our new website. We have to say,
-												it has made us glad to have chosen Tilability! Lorem ipsum
-												dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-												eirmod tempor invidunt.â</p>
-											<p class="quoter">John Doe</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel">
-									<div class="panel-wrapper">
-										<div class="logos alignleft">
-											<img src="<%=basePath%>view/images/logos/themeforest.jpg" alt="themeforest" />
-										</div>
-										<div class="quote">
-											<p>Lorem ipsum dolor sit amet, consetetur sadipscing
-												elitr, sed diam nonumy eirmod tempor invidunt. Stet clita
-												kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-												sit amet et justo duo dolor. Stet clita kasd gubergren, no
-												sea takimata sanctus est Lorem ipsum dolor sit amet et justo
-												duo dolor.â</p>
-											<p class="quoter">Max Mustermann</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel">
-									<div class="panel-wrapper">
-										<div class="logos alignleft">
-											<img src="<%=basePath%>view/images/logos/photodune.jpg" alt="photodune" />
-										</div>
-										<div class="quote">
-											<p>Duis autem vel eum iriure dolor in hendrerit in
-												vulputate velit esse molestie consequat, vel illum dolore eu
-												feugiat nulla facilisis at vero eros et accumsan et iusto
-												odio dignissim qui blandit praesent luptatum zzril delenit
-												augue duis dolore te feugait nulla facilisi. Stet clita kasd
-												gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-												amet et justo duo dolor. Lorem ipsum dolor sit amet,
-												consetetur sadipscing elitr.â</p>
-											<p class="quoter">Amy McDonald</p>
-										</div>
-									</div>
-								</div>
-								<!-- end panel -->
-							</div>
-						</div>
-					</div>
-					<!-- end quote -->
-					<div class="col1-3">
-					<h3>Our Services</h3>
-					<div id="accordion">
-						<h6>
-							<a href="#section1">Tempor Invidunt</a>
-						</h6>
-						<div>
-							<p>
-								Phasellus egestas accumsan laoreet. Tincidunt ipsum sit amet
-								urna egestas rhoncus. Lorem ipsum dolor sit amet, consetetur ut
-								sadip elitr, sed diam. <a href="#" onclick="return false"
-									title="Link">Read more</a>
-							</p>
-						</div>
-						<h6>
-							<a href="#section2">Lorem Ipsum</a>
-						</h6>
-						<div>
-							<p>
-								Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-								diam nonumy eirmod tempor invidunt ut labore et dolore magna
-								aliquyam erat, sed diam voluptua. <a href="#"
-									onclick="return false" title="Link">Read more</a>
-							</p>
-						</div>
-						<h6>
-							<a href="#section3">Suspendisse Semper</a>
-						</h6>
-						<div>
-							<p>
-								At vero eos et accusam et justo duo dolores et ea rebum. <a
-									href="#" onclick="return false" title="Link">Read more</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col1-3">
-					<h3>Why Choose Us?</h3>
-					<div class="pics">
-						<div class="proj-img">
-							<a href="<%=basePath%>view/images/shutterstock_84787564.jpg" title="Image Title"
-								rel="prettyPhoto"></a><img src="<%=basePath%>view/images/image1-s.jpg"
-								alt="Shutterstock 84787564" /><i>hover background</i>
-						</div>
-					</div>
-					<p>Ante ipsum primis in faucibus orci luctus et ultrices
-						posuere cubilia. Nam quis cursus massa. Dapibus, turpis quis
-						ultricies tincidunt , elit augue facilisis turpis, et suscipit
-						nibh eros eget tortor.</p>
-					<p>
-						<a href="#" onclick="return false" title="Link">more about us</a>
+				<div class="col-lg-4 callout">
+					<span class="icon icon-heart"></span>
+					<h2>Crafted with Love</h2>
+					<p>We don't make sites, we craft themes with love & passion. That is our most valued secret. We only do thing that we love.   </p>
+				</div><!-- col-lg-4 -->	
+			</div><!-- row -->
+		</div><!-- greywrap -->
+		
+		<!-- ==== ABOUT ==== -->
+		<div class="container" id="about" name="about">
+			<div class="row white">
+			<br>
+				<h1 class="centered">A LITTLE ABOUT OUR AGENCY</h1>
+				<hr>
+				
+				<div class="col-lg-6">
+					<p>We believe ideas come from everyone, everywhere. In fact, at BlackTie, everyone within our agency walls is a designer in their own right. And there are a few principles we believeâand we believe everyone should believeâabout our design craft. These truths drive us, motivate us, and ultimately help us redefine the power of design. Weâre big believers in doing right by our neighbors. After all, we grew up in the Twin Cities and we believe this place has much to offer. So we do what we can to support the community we love.</p>
+				</div><!-- col-lg-6 -->
+				
+				<div class="col-lg-6">
+					<p>Over the past four years, weâve provided more than $1 million in combined cash and pro bono support to Way to Grow, an early childhood education and nonprofit organization. Other community giving involvement throughout our agency history includes pro bono work for more than 13 organizations, direct giving, a scholarship program through the Minneapolis College of Art & Design, board memberships, and ongoing participation in the Keystone Club, which gives five percent of our companyâs earnings back to the community each year.</p>
+				</div><!-- col-lg-6 -->
+			</div><!-- row -->
+		</div><!-- container -->
+		
+		<!-- ==== SECTION DIVIDER1 -->
+		<section class="section-divider textdivider divider1" style="background:url('<%=basePath%>images/bg/divider1.jpg');">
+			<div class="container">
+				<h1>DESIGN EXPAND BOUNDARIES</h1>
+				<hr>
+				<p>To achieve real change, we have to expand boundaries. Because the Wild West of what-could-be is unexplored but rife with opportunity.</p>
+			</div><!-- container -->
+		</section><!-- section -->
+		
+		
+		<!-- ==== SERVICES ==== -->
+		<div class="container" id="services" name="services">
+			<br>
+			<br>
+			<div class="row">
+				<h2 class="centered">ONE BRAND, ONE VOICE.</h2>
+				<hr>
+				<br>
+				<div class="col-lg-offset-2 col-lg-8">
+					<p>Employees and consumers. Two halves of a brandâs entirety, the whole of a brandâs audience. Sometimes these two halves have very different viewpoints, creating a weak spot in the brand story. Weakness tarnishes credibility. Brands that arenât credible arenât viable.
 					</p>
-				</div>
-				<div class="col1-3 last">
-					<h3>From the Blog</h3>
-					<div class="date alignleft">
-						<p>
-							28<br /> <span class="bold">FEB</span>
-						</p>
+					<p>We squash weakness by designing the whole brand story. Itâs crafted around the truism held by employees and consumers to create an experience that connects from the inside out.</p>
+					<p>By being true to the brand we represent, we elevate the audiencesâ relationship to it. Like becomes love becomes a passion. Passion becomes advocacy. And we see the brand blossom from within, creating a whole story the audience embraces. Thatâs when the brand can truly flex its muscles.</p>
+				</div><!-- col-lg -->
+			</div><!-- row -->
+			
+			<div class="row">
+				<h2 class="centered">MOBILE FIRST THINKING, ALWAYS.</h2>
+				<hr>
+				<br>
+				<div class="col-lg-offset-2 col-lg-8">
+					<img class="img-responsive" src="<%=basePath%>images/iphone.png" alt="">
+				</div><!-- col -->
+			</div><!-- row -->
+		</div><!-- container -->
+  		
+
+		<!-- ==== SECTION DIVIDER2 -->
+		<section class="section-divider textdivider divider2" style="background:url('<%=basePath%>images/bg/divider2.jpg');">
+			<div class="container">
+				<h1>DESIGN IS AN INTERACTION</h1>
+				<hr>
+				<p>To develop a deeper and more meaningful connection with consumers, we believe design must invite them to take part in the conversation.</p>
+			</div><!-- container -->
+		</section><!-- section -->
+
+		<!-- ==== TEAM MEMBERS ==== -->
+		<div class="container" id="team" name="team">
+		<br>
+			<div class="row white centered">
+				<h1 class="centered">MEET OUR AWESOME TEAM</h1>
+				<hr>
+				<br>
+				<br>
+				<div class="col-lg-3 centered">
+					<img class="img img-circle" src="<%=basePath%>images/team/team01.jpg" height="120px" width="120px" alt="">
+					<br>
+					<h4><b>Mike Arney</b></h4>
+					<a href="#" class="icon icon-twitter"></a>
+					<a href="#" class="icon icon-facebook"></a>
+					<a href="#" class="icon icon-flickr"></a>
+					<p>Mike combines an expert technical knowledge with a real eye for design. Working with clients from a wide range of industries, he fully understands client objectives when working on a project, large or small.</p>
+				</div><!-- col-lg-3 -->
+				
+				<div class="col-lg-3 centered">
+					<img class="img img-circle" src="<%=basePath%>images/team/team02.jpg" height="120px" width="120px" alt="">
+					<br>
+					<h4><b>Tim Davies</b></h4>
+					<a href="#" class="icon icon-twitter"></a>
+					<a href="#" class="icon icon-facebook"></a>
+					<a href="#" class="icon icon-flickr"></a>
+					<p>Tim is an experienced marcoms practitioner and manages projects from inception to delivery. He understands the synergy between great design and commercial effectiveness which shines through on every project.</p>
+				</div><!-- col-lg-3 -->
+				
+				<div class="col-lg-3 centered">
+					<img class="img img-circle" src="<%=basePath%>images/team/team03.jpg" height="120px" width="120px" alt="">
+					<br>
+					<h4><b>Michele Lampa</b></h4>
+					<a href="#" class="icon icon-twitter"></a>
+					<a href="#" class="icon icon-facebook"></a>
+					<a href="#" class="icon icon-flickr"></a>
+					<p>Be a creative director is a hard task, but Michele loves what she does. Her combination of knowledge and expertise is an important pillar in our agency.</p>
+				</div><!-- col-lg-3 -->
+				
+				<div class="col-lg-3 centered">
+					<img class="img img-circle" src="<%=basePath%>images/team/team04.jpg" height="120px" width="120px" alt="">
+					<br>
+					<h4><b>Jaye Smith</b></h4>
+					<a href="#" class="icon icon-twitter"></a>
+					<a href="#" class="icon icon-facebook"></a>
+					<a href="#" class="icon icon-flickr"></a>
+					<p>Jaye began making websites when animated logos and scrolling text were cool, but has since found a love for simplicity, creating websites that are a pleasure to browse. Monkey Island Fan.</p>
+				</div><!-- col-lg-3 -->
+				
+			</div><!-- row -->
+		</div><!-- container -->
+
+		<!-- ==== GREYWRAP ==== -->
+		<div id="greywrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 centered">
+						<img class="img-responsive" src="<%=basePath%>images/macbook.png" align="">
 					</div>
-					<div class="next-to-date">
-						<h4>Sed Sem Pharetra Luctus</h4>
-						<p>
-							Pellentesque id neque ut mauris bibendum tempor ut eu nibh turpis
-							velit porttitor arcu. <a href="single-post.html"
-								title="Single Blog Entry">Read more</a>
-						</p>
-					</div>
-					<div class="date alignleft">
-						<p>
-							24<br /> <span class="bold">FEB</span>
-						</p>
-					</div>
-					<div class="next-to-date">
-						<h4>Vulputate Velit Esse Molestie</h4>
-						<p>
-							Duis autem vel eum iriure dolor in hendrerit in vulputate velit
-							esse molestie consequat, vel illum dolore. <a
-								href="single-post.html" title="Single Blog Entry">Read more</a>
-						</p>
-					</div>
-					<div class="date alignleft">
-						<p>
-							03<br /> <span class="bold">FEB</span>
-						</p>
-					</div>
-					<div class="next-to-date">
-						<h4>Sed Sem Pharetra Luctus</h4>
-						<p>
-							Stet clita kasd gubergren, no sea takimata sanctus. <a href="#"
-								title="Single Blog Entry">Read more</a>
-						</p>
-					</div>
-				</div>
-				</div>
-				<!-- end slideshow navigation -->
+					<div class="col-lg-4">
+						<h2>We Are Hiring!</h2>
+						<p>Do you want to be one of use? Sure you want, because we are an awesome team!. Here we work hard every day to craft pixel perfect sites.</p>
+						<p><a class="btn btn-success">Contact Us</a></p>
+					</div>					
+				</div><!-- row -->
+			</div>
+			<br>
+			<br>
+		</div><!-- greywrap -->
+		
+		<!-- ==== SECTION DIVIDER3 -->
+		<section class="section-divider textdivider divider3" style="background:url('<%=basePath%>images/bg/divider3.jpg');">
+			<div class="container">
+				<h1>DESIGN SOLVE PROBLEMS</h1>
+				<hr>
+				<p>From the purely practical to the richly philosophical, design is the solution to a host of challenges.</p>
+			</div><!-- container -->
+		</section><!-- section -->
+		
+		<!-- ==== PORTFOLIO ==== -->
+		<div class="container" id="portfolio" name="portfolio">
+		<br>
+			<div class="row">
+				<br>
+				<h1 class="centered">WE CREATE COOL STUFF</h1>
+				<hr>
+				<br>
+				<br>
+			</div><!-- /row -->
+			<div class="container">
+			<div class="row">	
+			
+				<!-- PORTFOLIO IMAGE 1 -->
+				<div class="col-md-4 ">
+			    	<div class="grid mask">
+						<figure>
+							<img class="img-responsive" src="<%=basePath%>images/portfolio/folio01.jpg" alt="">
+							<figcaption>
+								<h5>DASHBOARD</h5>
+								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+							</figcaption><!-- /figcaption -->
+						</figure><!-- /figure -->
+			    	</div><!-- /grid-mask -->
+				</div><!-- /col -->
 				
 				
+						 <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+						      a modal for each of your projects. -->
+						      
+						  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						    <div class="modal-dialog">
+						      <div class="modal-content">
+						        <div class="modal-header">
+						          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						          <h4 class="modal-title">Project Title</h4>
+						        </div>
+						        <div class="modal-body">
+						          <p><img class="img-responsive" src="<%=basePath%>images/portfolio/folio01.jpg" alt=""></p>
+						          <p>This project was crafted for Some Name corp. Detail here a little about your job requirements and the tools used. Tell about the challenges faced and what you and your team did to solve it.</p>
+						          <p><b><a href="#">Visit Site</a></b></p>
+						        </div>
+						        <div class="modal-footer">
+						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+						      </div><!-- /.modal-content -->
+						    </div><!-- /.modal-dialog -->
+						  </div><!-- /.modal -->
+				
+				
+				<!-- PORTFOLIO IMAGE 2 -->
+				<div class="col-md-4">
+			    	<div class="grid mask">
+						<figure>
+							<img class="img-responsive" src="<%=basePath%>images/portfolio/folio02.jpg" alt="">
+							<figcaption>
+								<h5>UI DESIGN</h5>
+								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+							</figcaption><!-- /figcaption -->
+						</figure><!-- /figure -->
+			    	</div><!-- /grid-mask -->
+				</div><!-- /col -->
+				
+				<!-- PORTFOLIO IMAGE 3 -->
+				<div class="col-md-4">
+			    	<div class="grid mask">
+						<figure>
+							<img class="img-responsive" src="<%=basePath%>images/portfolio/folio03.jpg" alt="">
+							<figcaption>
+								<h5>ANDROID PAGE</h5>
+								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+							</figcaption><!-- /figcaption -->
+						</figure><!-- /figure -->
+			    	</div><!-- /grid-mask -->
+				</div><!-- /col -->
+			</div><!-- /row -->
+
+				<!-- PORTFOLIO IMAGE 4 -->
+			<div class="row">	
+				<div class="col-md-4 ">
+			    	<div class="grid mask">
+						<figure>
+							<img class="img-responsive" src="<%=basePath%>images/portfolio/folio04.jpg" alt="">
+							<figcaption>
+								<h5>PROFILE</h5>
+								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+							</figcaption><!-- /figcaption -->
+						</figure><!-- /figure -->
+			    	</div><!-- /grid-mask -->
+				</div><!-- /col -->
+				
+				<!-- PORTFOLIO IMAGE 5 -->
+				<div class="col-md-4">
+			    	<div class="grid mask">
+						<figure>
+							<img class="img-responsive" src="<%=basePath%>images/portfolio/folio05.jpg" alt="">
+							<figcaption>
+								<h5>TWITTER STATUS</h5>
+								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+							</figcaption><!-- /figcaption -->
+						</figure><!-- /figure -->
+			    	</div><!-- /grid-mask -->
+				</div><!-- /col -->
+				
+				<!-- PORTFOLIO IMAGE 6 -->
+				<div class="col-md-4">
+			    	<div class="grid mask">
+						<figure>
+							<img class="img-responsive" src="<%=basePath%>images/portfolio/folio06.jpg" alt="">
+							<figcaption>
+								<h5>PHONE MOCKUP</h5>
+								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+							</figcaption><!-- /figcaption -->
+						</figure><!-- /figure -->
+			    	</div><!-- /grid-mask -->
+				</div><!-- /col -->
+			</div><!-- /row -->
+			<br>
+			<br>
+		</div><!-- /row -->
+	</div><!-- /container -->
+
+		<!-- ==== SECTION DIVIDER4 ==== -->
+		<section class="section-divider textdivider divider4" style="background:url('<%=basePath%>images/bg/divider4.jpg');">
+			<div class="container">
+				<h1>DESIGN CREATES EMOTIONAL CONNECTION</h1>
+				<hr>
+				<p>Thereâs more to design than meets the eye. Itâs when it meets the heart that design creates a meaningful, lasting connection with the audience.</p>
+			</div><!-- container -->
+		</section><!-- section -->
+		
+		<!-- ==== BLOG ==== -->
+		<div class="container" id="blog" name="blog">
+		<br>
+			<div class="row">
+				<br>
+				<h1 class="centered">WE ARE STORYTELLERS</h1>
+				<hr>
+				<br>
+				<br>
+			</div><!-- /row -->
+			
+			<div class="row">
+				<div class="col-lg-6 blog-bg">
+					<div class="col-lg-4 centered">
+					<br>
+						<p><img class="img img-circle" src="<%=basePath%>images/team/team04.jpg" width="60px" height="60px"></p>
+						<h4>Jaye Smith</h4>
+						<h5>Published Aug 30.</h5>
+					</div>
+					<div class="col-lg-8 blog-content">
+						<h2>We Define Success</h2>
+						<p>Armed with insight, we embark on designing the right brand experience that engages the audience. It encompasses both the strategic direction and creative execution that solves a business problem and brings the brand to life.</p>
+						<p>In the create phase, the big idea is unleashed to the world through different media touchpoints. This is when we watch the audience fall in love all over again with our clientâs brand.</p>
+						<p><a href="#" class="icon icon-link"> Read More</a></p>
+						<br>
+					</div>
+				</div><!-- /col -->
+				
+				<div class="col-lg-6 blog-bg">
+					<div class="col-lg-4 centered">
+					<br>
+						<p><img class="img img-circle" src="<%=basePath%>images/team/team03.jpg" width="60px" height="60px"></p>
+						<h4>Michele Lampa</h4>
+						<h5>Published Aug 28.</h5>
+					</div>
+					<div class="col-lg-8 blog-content">
+						<h2>A Beautiful Story</h2>
+						<p>Armed with insight, we embark on designing the right brand experience that engages the audience. It encompasses both the strategic direction and creative execution that solves a business problem and brings the brand to life.</p>
+						<p>In the create phase, the big idea is unleashed to the world through different media touchpoints. This is when we watch the audience fall in love all over again with our clientâs brand.</p>
+						<p><a href="#" class="icon icon-link"> Read More</a></p>
+						<br>
+					</div>
+				</div><!-- /col -->
+			</div><!-- /row -->
+			<br>
+			<br>
+		</div><!-- /container -->
+
+		
+		<!-- ==== SECTION DIVIDER6 ==== -->
+		<section class="section-divider textdivider divider6" style="background:url('<%=basePath%>images/bg/divider6.jpg');">
+			<div class="container">
+				<h1>CRAFTED IN NEW YORK, USA.</h1>
+				<hr>
+				<p>Some Address 987,</p>
+				<p>+34 9884 4893</p>
+				<p><a class="icon icon-twitter" href="#"></a> | <a class="icon icon-facebook" href="#"></a></p>
+			</div><!-- container -->
+		</section><!-- section -->
+		
+		<div class="container" id="contact" name="contact">
+			<div class="row">
+			<br>
+				<h1 class="centered">THANKS FOR VISITING US</h1>
+				<hr>
+				<br>
+				<br>
+				<div class="col-lg-4">
+					<h3>Contact Information</h3>
+					<p><span class="icon icon-home"></span> Some Address 987, NY<br/>
+						<span class="icon icon-phone"></span> +34 9884 4893 <br/>
+						<span class="icon icon-mobile"></span> +34 59855 9853 <br/>
+						<span class="icon icon-envelop"></span> <a href="#"> dinglinhui@hotmail.com</a> <br/>
+						<span class="icon icon-twitter"></span> <a href="#"> blacktie_co </a> <br/>
+						<span class="icon icon-facebook"></span> <a href="#"> BlackTie Agency </a> <br/>
+					</p>
+				</div><!-- col -->
+				
+				<div class="col-lg-4">
+					<h3>Newsletter</h3>
+					<p>Register to our newsletter and be updated with the latests information regarding our services, offers and much more.</p>
+					<p>
+						<form class="form-horizontal" role="form">
+						  <div class="form-group">
+						    <label for="inputEmail1" class="col-lg-4 control-label"></label>
+						    <div class="col-lg-10">
+						      <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="text1" class="col-lg-4 control-label"></label>
+						    <div class="col-lg-10">
+						      <input type="text" class="form-control" id="text1" placeholder="Your Name">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <div class="col-lg-10">
+						      <button type="submit" class="btn btn-success">Sign in</button>
+						    </div>
+						  </div>
+					   </form><!-- form -->
+					</p>
+				</div><!-- col -->
+				
+				<div class="col-lg-4">
+					<h3>Support Us</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				</div><!-- col -->
+
+			</div><!-- row -->
+		
+		</div><!-- container -->
+
+		<div id="footerwrap">
+			<div class="container">
+				<h4>Created by <a href="http://blacktie.co">BlackTie.co</a> - Copyright 2014</h4>
 			</div>
 		</div>
-		<!-- end content -->
-	</div>
-	<!-- start footer -->
-	<div id="footer">
-		<div class="footer-content clearfix">
-			<div class="col1-4">
-				<h3>Contact Us</h3>
-				<p>
-					ppandp Business Theme<br /> 22 Miron Drive<br /> New York City,
-					12603 NY<br /> Email: <a href="#" class="escape" title="Contact">info<span><span>&part;</span>
-					</span>domain.com</a><br /> Phone: (845) 123 4567
-				</p>
-			</div>
-			<div class="col1-4">
-				<h3>About Us</h3>
-				<p>Nam liber tempor cum soluta nobis eleifend option congue
-					nihil imperdiet doming id quod mazim placerat facer possim assum.
-					Lorem ipsum dolor sit amet.</p>
-			</div>
-			<div class="col1-4">
-				<h3>Footer Links</h3>
-				<p>
-					<a href="#" title="Home">Home</a><br /> <a href="#"
-						title="Typography">Services</a><br /> <a href="#"
-						title="Portfolio">Portfolio</a><br /> <a href="#" title="Blog">Blog</a><br />
-					<a href="#" title="Company">Company</a><br />
-				</p>
-			</div>
-			<div class="col1-4 last">
-				<h3>We are Social</h3>
-				<p>Connect with us through the following social media platforms!</p>
-				<ul class="social">
-					<li class="twitter first"><a href="#" title="twitter">Visit
-							our twitter Account</a>
-					</li>
-					<li class="facebook"><a href="#" title="facebook">Visit
-							our facebook Account</a>
-					</li>
-					<li class="dribble"><a href="#" title="dribble">Visit our
-							dribble Account</a>
-					</li>
-					<li class="flickr"><a href="#" title="flickr">Visit our
-							flickr Account</a>
-					</li>
-					<li class="vimeo"><a href="#" title="vimeo">Visit our
-							vimeo Account</a>
-					</li>
-				</ul>
-				<div class="clear"></div>
-			</div>
-			<div id="footer-bottom" class="clear">
-				<p class="alignleft">Â© 2012 Tilability.com. All rights reserved.</p>
-				<p class="alignright">
-					<a href="#" onclick="return false" title="Link">Terms of Use</a> <span
-						class="padding">|</span> <a href="#" onclick="return false"
-						title="Link">Privacy Policy</a>
-				</p>
-			</div>
-		</div>
-	</div>
-	<!-- end footer -->
-	<div id="background"></div>
-</body>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+		      	
+	<script type="text/javascript" src="<%=basePath%>js/retina.js"></script>
+	<script type="text/javascript" src="<%=basePath%>js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="<%=basePath%>js/smoothscroll.js"></script>
+	<script type="text/javascript" src="<%=basePath%>js/jquery-func.js"></script>
+
+  </body>
 </html>

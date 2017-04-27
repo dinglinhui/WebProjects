@@ -80,6 +80,7 @@ public class LoginController {
         	//return "redirect:main";
 			mv.setViewName("redirect:chat/index");
         }
+//		mv.setViewName("redirect:chat/index");
 		mv.setViewName("/view/login");
 		return mv;
 	}
